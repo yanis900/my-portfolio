@@ -43,8 +43,8 @@ export default function Projects() {
     <main ref={targetRef} className="h-[200vh] relative">
       <section className="w-screen h-screen sticky top-0 flex items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-5">
-          {projects.map((project) => (
-            <div className="w-[90vw] h-[60%] flex flex-col sm:flex-row p-5">
+          {projects.map((project, index) => (
+            <div key={index} className="w-[90vw] h-[60%] flex flex-col sm:flex-row p-5">
               <div className="h-full sm:w-1/2 w-full border">
                 <Image
                   src={project.img}
