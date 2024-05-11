@@ -37,7 +37,7 @@ export default function About() {
             <div className="w-0.5 h-5 bg-black"></div>
             <div className="flex gap-2">
               {stack.map((item, index) => (
-                <div className="w-8 h-8">
+                <div className="w-8 h-8" key={index}>
                   <Image
                     className="w-full h-full"
                     key={index}
@@ -52,10 +52,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="relative">
-          {/* <div className="tr"></div>
-          <div className="bl"></div> */}
-          <ChevronsRight className="right-[-60px] top-[-60px] absolute rotate-[-45deg] size-20" />
+        <div>
           <Image
             className="rounded-2xl accent"
             src={"/profile.png"}
@@ -63,7 +60,6 @@ export default function About() {
             width={300}
             height={300}
           />
-          <ChevronsLeft className="left-[-60px] bottom-[-60px] rotate-[-45deg] absolute size-20" />
         </div>
       </div>
     </main>
