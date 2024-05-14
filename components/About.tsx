@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "@/components/Header";
-import { ChevronsLeft, ChevronsRight, Github, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 
 export default function About() {
@@ -14,7 +14,7 @@ export default function About() {
   return (
     <main className="w-screen h-screen mesh">
       <Header />
-      <div className="w-screen h-full flex flex-col-reverse sm:flex-row items-center justify-center gap-[80px] sm:pb-36 ">
+      <div id="about" className="w-screen h-full flex flex-col-reverse sm:flex-row items-center justify-center gap-[80px] sm:pb-36">
         <div className="">
           <h1 className="sm:text-5xl text-3xl font-bold">
             Full-Stack Developer
@@ -54,7 +54,7 @@ export default function About() {
 
         <div>
           <Image
-            className="rounded-2xl accent"
+            className="rounded-full"
             src={"/profile.png"}
             alt={"profile"}
             width={300}
