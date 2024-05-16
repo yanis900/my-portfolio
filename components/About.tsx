@@ -2,6 +2,7 @@ import React from "react";
 import Header from "@/components/Header";
 import { Github, Linkedin } from "lucide-react";
 import Image from "next/image";
+import { Separator } from "./ui/separator";
 
 export default function About() {
   const stack = [
@@ -14,7 +15,10 @@ export default function About() {
   return (
     <main className="w-screen h-screen mesh">
       <Header />
-      <div id="about" className="w-screen h-full flex flex-col-reverse sm:flex-row items-center justify-center gap-[80px] sm:pb-36">
+      <div
+        id="about"
+        className="w-screen h-full flex flex-col-reverse sm:flex-row items-center justify-center gap-[80px] sm:pb-36"
+      >
         <div className="">
           <h1 className="sm:text-5xl text-3xl font-bold">
             Full-Stack Developer
@@ -31,10 +35,10 @@ export default function About() {
               <Github className="hover:opacity-50" />
             </a>
           </div>
-          <div className="w-12 h-0.5 bg-black my-2"></div>
-          <div className="flex gap-2 items-center">
+          <Separator className="my-2"/>
+          <div className="flex gap-2 items-center space-x-2">
             <h2 className="font-bold">Tech Stack</h2>
-            <div className="w-0.5 h-5 bg-black"></div>
+          <Separator orientation="vertical" className="border-black"/>
             <div className="flex gap-2">
               {stack.map((item, index) => (
                 <div className="w-8 h-8" key={index}>
@@ -43,8 +47,8 @@ export default function About() {
                     key={index}
                     src={item.src}
                     alt={item.name}
-                    width={25}
-                    height={25}
+                    width={20}
+                    height={20}
                   />
                 </div>
               ))}

@@ -1,5 +1,5 @@
 "use client";
-
+import { toast } from "sonner";
 import { FormEvent, useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -28,14 +28,14 @@ export default function ContactPage() {
       });
 
       if (response.ok) {
-        alert("Form submitted successfully");
+        toast("Form submitted successfully");
         setFirstName("");
         setLastName("");
         setPhone("");
         setEmail("");
         setMessage("");
       } else {
-        alert("Form submission failed");
+        toast("Form submission failed");
       }
     } catch (error) {
       console.error(error);
