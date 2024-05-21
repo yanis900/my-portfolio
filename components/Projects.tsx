@@ -9,25 +9,28 @@ import { Badge } from "./ui/badge";
 
 export const projects = [
   {
-    name: "Ya Motors",
+    name: "Ya-Motors",
     type: "Car Viewer App",
     img: "/carapp.png",
     src: "https://www.yamotors.ltd/",
-    description: "",
+    description:
+      "Experience seamless car browsing with our Car Viewing App. Using dynamic routes, the app offers an intuitive interface to display detailed information for each vehicle. Explore specifications, images, and features of cars with ease, making your car search efficient and enjoyable.",
   },
   {
-    name: "Drip Catalogue",
+    name: "Drip-Catalogue",
     type: "E-Commerce App",
     img: "/ecommerce.png",
     src: "https://dripcatalogue.shop/",
-    description: "",
+    description:
+      "Shop the latest fashion trends with our E-commerce Clothing Store. Offering a wide range of clothing options, the store provides a user-friendly shopping experience, complete with secure checkout and personalized recommendations.",
   },
   {
     name: "Cyber",
     type: "Crypto Dashboard App",
     img: "/cryptoapp.png",
     src: "",
-    description: "",
+    description:
+      "Stay on top of your crypto investments with our Crypto Dashboard. The app provides a comprehensive overview of your wallet, displaying current trades, balances, and transaction history. With real-time updates and insightful analytics, managing your cryptocurrency portfolio has never been easier.",
   },
 ];
 
@@ -45,16 +48,12 @@ export default function Projects() {
         id="projects"
         className="w-screen h-screen sticky top-0 flex items-center overflow-hidden"
       >
-        <div className="absolute top-20 left-[35%] text-center">
-          <h1 className="font-bold text-4xl">
-            Passion For Learning, <br /> Crafted In Code
-          </h1>
-        </div>
-        <motion.div style={{ x }} className="flex gap-10">
+        <motion.div style={{ x }} className="flex gap-10 h-[90vh] items-center">
           {projects.map((project, index) => (
             <div
               key={index}
               className="w-[90vw] h-[60%] flex flex-col sm:flex-row p-5"
+              id={project.name}
             >
               <div className="h-full sm:w-1/2 w-full">
                 <Image
@@ -69,14 +68,7 @@ export default function Projects() {
                 <div className="flex flex-col gap-2 items-center justify-center text-center">
                   <span className="font-extrabold text-xl">{project.type}</span>
                   <h3 className="text-2xl uppercase">{project.name}</h3>
-                  <p className="sm:text-lg text-base">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-                    <br />
-                    Inventore qui temporibus necessitatibus corporis dolore
-                    dignissimos autem eaque laborum blanditiis id explicabo,
-                    cumque nam neque, quis possimus distinctio aspernatur animi
-                    placeat.
-                  </p>
+                  <p className="sm:text-lg text-base">{project.description}</p>
                 </div>
                 <div className="flex gap-2">
                   <Badge>NextJS</Badge>

@@ -3,23 +3,13 @@ import Header from "@/components/Header";
 import { Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { Separator } from "./ui/separator";
-
+import { stack } from "../app/contants";
 export default function About() {
-  const stack = [
-    { name: "nextJS", src: "nextjs.svg" },
-    { name: "mongoDB", src: "mongodb.svg" },
-    { name: "nodeJS", src: "nodejs.svg" },
-    { name: "tailwind", src: "tailwind.svg" },
-  ];
-
   return (
     <main className="w-screen h-screen mesh">
       <Header />
-      <div
-        id="about"
-        className="w-screen h-full flex flex-col-reverse sm:flex-row items-center justify-center gap-[80px] sm:pb-36"
-      >
-        <div className="">
+      <div className="w-screen h-full flex flex-col-reverse sm:flex-row items-center justify-center gap-[80px] sm:pb-36">
+        <div>
           <h1 className="sm:text-5xl text-3xl font-bold">
             Full-Stack Developer
           </h1>
@@ -35,20 +25,20 @@ export default function About() {
               <Github className="hover:opacity-50" />
             </a>
           </div>
-          <Separator className="my-2"/>
+          <Separator className="my-2"  />
           <div className="flex gap-2 items-center space-x-2">
-            <h2 className="font-bold">Tech Stack</h2>
-          <Separator orientation="vertical" className="border-black"/>
+            <h2 className="font-bold">Tech Stack:</h2>
+            <div className="bg-border w-[1px] h-5"></div>
             <div className="flex gap-2">
               {stack.map((item, index) => (
-                <div className="w-8 h-8" key={index}>
+                <div className="w-7 h-7" key={index}>
                   <Image
                     className="w-full h-full"
                     key={index}
                     src={item.src}
                     alt={item.name}
-                    width={20}
-                    height={20}
+                    width={35}
+                    height={35}
                   />
                 </div>
               ))}
@@ -56,7 +46,7 @@ export default function About() {
           </div>
         </div>
 
-        <div>
+        <div className="frame relative">
           <Image
             className="rounded-full"
             src={"/profile.png"}

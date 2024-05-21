@@ -22,9 +22,7 @@ export default function Header() {
         <Terminal />
       </ul>
       <ul className="flex gap-5">
-        <Button variant={"secondary"}>
-          <a href="#about">About</a>
-        </Button>
+        <Button variant={"secondary"}>About</Button>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -32,16 +30,18 @@ export default function Header() {
               <NavigationMenuContent>
                 <ul className="flex flex-col w-[208px] p-5 gap-2">
                   {projects.map((project, index) => (
-                    <Card key={index} className="flex flex-row items-center w-full relative p-2 rounded-lg bg-gray-100 hover:cursor-pointer group">
-                        <Image
+                    <Card
+                      key={index}
+                      className="flex flex-row items-center w-full relative p-2 rounded-lg bg-gray-100 hover:cursor-pointer group"
+                    >
+                      <Image
                         className="w-full rounded-lg"
-                          src={project.img}
-                          alt=""
-                          width={150}
-                          height={150}
-                        />
-                        <div className="bg-gray-100 absolute bottom-2 right-2 rounded-lg">
-                        </div>
+                        src={project.img}
+                        alt=""
+                        width={150}
+                        height={150}
+                      />
+                      <div className="bg-gray-100 absolute bottom-2 right-2 rounded-lg"></div>
                     </Card>
                   ))}
                 </ul>

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -50,9 +49,6 @@
   }
 }
 
-
-
-
 /* * {
   border: 1px solid black;
 }  */
@@ -75,7 +71,7 @@
   left: 0;
   right: 0;
   height: 10px;
-  background: hsl(var(--primary)) ;
+  background: hsl(var(--primary));
   transform-origin: 0%;
   z-index: 99;
 }
@@ -92,4 +88,25 @@
   top: 0;
   opacity: 0.2;
   z-index: -1;
+}
+
+.frame::before {
+  content: "";
+  background-image: url("/top.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 0;
+}
+.frame::after {
+  content: "";
+  background-image: url("/bottom.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
 }
