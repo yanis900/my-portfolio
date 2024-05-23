@@ -6,33 +6,8 @@ import { Button } from "./ui/button";
 import { ExternalLink } from "lucide-react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { Badge } from "./ui/badge";
+import { projects } from "@/app/contants";
 
-export const projects = [
-  {
-    name: "Ya-Motors",
-    type: "Car Viewer App",
-    img: "/carapp.png",
-    src: "https://www.yamotors.ltd/",
-    description:
-      "Experience seamless car browsing with our Car Viewing App. Using dynamic routes, the app offers an intuitive interface to display detailed information for each vehicle. Explore specifications, images, and features of cars with ease, making your car search efficient and enjoyable.",
-  },
-  {
-    name: "Drip-Catalogue",
-    type: "E-Commerce App",
-    img: "/ecommerce.png",
-    src: "https://dripcatalogue.shop/",
-    description:
-      "Shop the latest fashion trends with our E-commerce Clothing Store. Offering a wide range of clothing options, the store provides a user-friendly shopping experience, complete with secure checkout and personalized recommendations.",
-  },
-  {
-    name: "Cyber",
-    type: "Crypto Dashboard App",
-    img: "/cryptoapp.png",
-    src: "",
-    description:
-      "Stay on top of your crypto investments with our Crypto Dashboard. The app provides a comprehensive overview of your wallet, displaying current trades, balances, and transaction history. With real-time updates and insightful analytics, managing your cryptocurrency portfolio has never been easier.",
-  },
-];
 
 export default function Projects() {
   const targetRef = useRef<HTMLDivElement | null>(null);

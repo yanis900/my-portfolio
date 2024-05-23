@@ -1,14 +1,17 @@
 import React from "react";
 import About from "@/components/About";
-import Projects from "@/components/Projects";
 import ScrollBar from "@/components/ScrollBar";
+import RecentProjects from "@/components/RecentProjects";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <>
-      <ScrollBar />      
+      <ScrollBar />
+      <Header />
       <About />
-      <Projects />
+      {/* <Projects /> */}
+      <RecentProjects />
     </>
   );
 }

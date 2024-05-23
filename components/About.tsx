@@ -1,17 +1,23 @@
-import React from "react";
-import Header from "@/components/Header";
+"use client";
+
+import React, { useEffect } from "react";
 import { Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { Separator } from "./ui/separator";
 import { stack } from "../app/contants";
+import { changeText } from "@/lib/textEffect";
+
 export default function About() {
+  // useEffect(() => {
+  //   changeText();
+  // }, []);
+
   return (
     <main className="w-screen h-screen mesh">
-      <Header />
-      <div className="w-screen h-full flex flex-col-reverse sm:flex-row items-center justify-center gap-[80px] sm:pb-36">
+      <div className="relative w-screen h-full flex flex-col-reverse sm:flex-row items-center justify-center gap-20 sm:pb-36">
         <div>
-          <h1 className="sm:text-5xl text-3xl font-bold">
-            Full-Stack Developer
+          <h1 className="heading">
+            Full-Stack <span data-value="Developer">Developer</span>
           </h1>
           <h2 className="text-slate-500 py-2 leading-snug sm:text-lg text-base">
             Hi I am Yanis Aityounes, a developer based in <br />
@@ -25,7 +31,7 @@ export default function About() {
               <Github className="hover:opacity-50" />
             </a>
           </div>
-          <Separator className="my-2"  />
+          <Separator className="my-2" />
           <div className="flex gap-2 items-center space-x-2">
             <h2 className="font-bold">Tech Stack:</h2>
             <div className="bg-border w-[1px] h-5"></div>
@@ -46,7 +52,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="frame relative">
+        <div className="blob">
           <Image
             className="rounded-full"
             src={"/profile.png"}

@@ -12,8 +12,9 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
-import { projects } from "./Projects";
+
 import { Card } from "./ui/card";
+import { projects } from "@/app/contants";
 
 export default function Header() {
   return (
@@ -22,7 +23,7 @@ export default function Header() {
         <Terminal />
       </ul>
       <ul className="flex gap-5">
-        <Button variant={"secondary"}>About</Button>
+        <Button  variant={"secondary"}>About</Button>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
