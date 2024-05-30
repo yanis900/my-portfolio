@@ -6,11 +6,11 @@ export function ContactDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="default">
+        <Button variant="gradient">
           Contact
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="z-[1000]">
         <ContactPage />
       </DialogContent>
     </Dialog>

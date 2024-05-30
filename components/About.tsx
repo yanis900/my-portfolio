@@ -1,58 +1,73 @@
-"use client";
-
-import React, { useEffect } from "react";
 import { Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { Separator } from "./ui/separator";
 import { stack } from "../app/contants";
-import { changeText } from "@/lib/textEffect";
+import BoxReveal from "./magicui/box-reveal";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 
 export default function About() {
-  // useEffect(() => {
-  //   changeText();
-  // }, []);
-
   return (
     <main className="w-screen h-screen mesh">
-      <div className="relative w-screen h-full flex flex-col-reverse sm:flex-row items-center justify-center gap-20 sm:pb-36">
+      <div className="relative w-screen h-full flex flex-col-reverse sm:flex-row items-center justify-center sm:pb-36">
         <div>
-          <h1 className="heading">
-            Full-Stack <span data-value="Developer">Developer</span>
-          </h1>
-          <h2 className="text-slate-500 py-2 leading-snug sm:text-lg text-base">
-            Hi I am Yanis Aityounes, a developer based in <br />
-            London, United Kingdom 📍
-          </h2>
-          <div className="flex gap-2 py-2">
-            <a href="https://www.linkedin.com/in/yanis-aityounes/">
-              <Linkedin className="hover:opacity-50" />
-            </a>
-            <a href="https://github.com/yanis900">
-              <Github className="hover:opacity-50" />
-            </a>
-          </div>
+          <BoxReveal duration={0.5}>
+            <h1>Full-Stack Developer</h1>
+          </BoxReveal>
+          <BoxReveal duration={0.5}>
+            <h3 className="py-2">
+              Hi 👋 I am Yanis Aityounes, a developer based in <br />
+              London, United Kingdom 📍
+            </h3>
+          </BoxReveal>
+          <BoxReveal duration={0.5}>
+            <div className="flex gap-2 py-2">
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <a href="https://www.linkedin.com/in/yanis-aityounes/">
+                    <Linkedin />
+                  </a>
+                </HoverCardTrigger>
+                <HoverCardContent>
+                  <div>LinkedIn</div>
+                </HoverCardContent>
+              </HoverCard>
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <a href="https://github.com/yanis900">
+                    <Github className="hover:opacity-50" />
+                  </a>
+                </HoverCardTrigger>
+                <HoverCardContent>
+                  <div>Github</div>
+                </HoverCardContent>
+              </HoverCard>
+            </div>
+          </BoxReveal>
           <Separator className="my-2" />
           <div className="flex gap-2 items-center space-x-2">
-            <h2 className="font-bold">Tech Stack:</h2>
+            <BoxReveal duration={0.5}>
+              <p className="font-bold">Tech Stack:</p>
+            </BoxReveal>
             <div className="bg-border w-[1px] h-5"></div>
-            <div className="flex gap-2">
-              {stack.map((item, index) => (
-                <div className="w-7 h-7" key={index}>
-                  <Image
-                    className="w-full h-full"
-                    key={index}
-                    src={item.src}
-                    alt={item.name}
-                    width={35}
-                    height={35}
-                  />
-                </div>
-              ))}
-            </div>
+            <BoxReveal duration={0.5}>
+              <div className="flex gap-2">
+                {stack.map((item, index) => (
+                  <div className="w-7 h-7" key={index}>
+                    <Image
+                      className="w-full h-full"
+                      key={index}
+                      src={item.src}
+                      alt={item.name}
+                      width={35}
+                      height={35}
+                    />
+                  </div>
+                ))}
+              </div>
+            </BoxReveal>
           </div>
         </div>
-
-        <div className="blob">
+        <div>
           <Image
             className="rounded-full"
             src={"/profile.png"}

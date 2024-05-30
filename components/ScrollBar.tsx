@@ -10,7 +10,7 @@ const ScrollBar = () => {
     damping: 30,
     restDelta: 0.001,
   });
-  return <motion.div className="progress-bar" style={{ scaleX }} />;
+  return <motion.div className="progress-bar gradient" style={{ scaleX }} />;
 };
 
 export default ScrollBar;

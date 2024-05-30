@@ -1,57 +1,65 @@
-"use client";
-
+import React from "react";
 import Image from "next/image";
-import React, { useRef } from "react";
-import { Button } from "./ui/button";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import { useScroll, useTransform, motion } from "framer-motion";
-import { Badge } from "./ui/badge";
 import { projects } from "@/app/contants";
-
+import { BorderBeam } from "./magicui/border-beam";
+import BoxReveal from "./magicui/box-reveal";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 export default function Projects() {
-  const targetRef = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-65%"]);
-
   return (
-    <main ref={targetRef} className="h-[200vh] relative">
-      <section
-        id="projects"
-        className="w-screen h-screen sticky top-0 flex items-center overflow-hidden"
-      >
-        <motion.div style={{ x }} className="flex gap-10 h-[90vh] items-center">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="w-[90vw] h-[60%] flex flex-col sm:flex-row p-5"
-              id={project.name}
-            >
-              <div className="h-full sm:w-1/2 w-full">
-                <Image
-                  src={project.img}
-                  alt=""
-                  width={1000}
-                  height={1000}
-                  className="w-full h-full rounded-xl"
-                />
-              </div>
-              <div className="flex flex-col items-center justify-center gap-2 h-full sm:w-1/2 w-full p-5">
-                <div className="flex flex-col gap-2 items-center justify-center text-center">
-                  <span className="font-extrabold text-xl">{project.type}</span>
-                  <h3 className="text-2xl uppercase">{project.name}</h3>
-                  <p className="sm:text-lg text-base">{project.description}</p>
-                </div>
-                <div className="flex gap-2">
-                  <Badge>NextJS</Badge>
-                  <Badge>MongoDB</Badge>
-                  <Badge>Sanity</Badge>
-                </div>
-                <div className="flex gap-2">
-                  <Button variant={"secondary"}>Preview</Button>
+    <main id="projects" className="relative w-screen h-screen flex flex-col items-center justify-center space-y-10 mesh">
+      <div className="w-full grid place-items-center absolute top-10">
+        <BoxReveal duration={0.5}>
+          <h1>
+            <span className="gradient-text">Passion</span> For Learning, <br />{" "}
+          </h1>
+        </BoxReveal>
+        <BoxReveal duration={0.5}>
+          <h1>
+            Crafted in <span className="gradient-text">Code.</span>
+          </h1>
+        </BoxReveal>
+      </div>
+
+      <div className="flex flex-row flex-wrap items-center justify-center gap-5 h-[25rem]">
+        {projects.map((project, index) => (
+          <Card
+            key={index}
+            className="relative w-[25rem] p-5 h-full flex flex-col"
+          >
+            <BorderBeam />
+            <div className="w-full h-1/2 relative overflow-hidden">
+              <div className="absolute w-full h-full rounded-3xl bg"></div>
+              <Image
+                src={project.img}
+                alt=""
+                width={500}
+                height={500}
+                className="z-100 absolute bottom-[-2rem] rotate-3 rounded-lg left-[15%]"
+              />
+            </div>
+            <div className="pt-5 space-y-2">
+              <BoxReveal duration={0.5}>
+                <h2>{project.type}</h2>
+              </BoxReveal>
+              <BoxReveal duration={0.5}>
+                <p>{project.description}</p>
+              </BoxReveal>
+              <div className="flex justify-between items-center">
+                <BoxReveal duration={0.5}>
+                  <div className="flex flex-row space-x-[-15px]">
+                    {project.icons && Object.values(project.icons).map((icon, index) => (
+                      <Avatar key={index}>
+                        <AvatarFallback />
+                        <AvatarImage src={icon} />
+                      </Avatar>
+                    ))}
+                  </div>
+                </BoxReveal>
+                <BoxReveal duration={0.5}>
                   <Button variant={"outline"} className="grid">
                     <a
                       href={project.src}
@@ -61,12 +69,12 @@ export default function Projects() {
                       <ExternalLink />
                     </a>
                   </Button>
-                </div>
+                </BoxReveal>
               </div>
             </div>
-          ))}
-        </motion.div>
-      </section>
+          </Card>
+        ))}
+      </div>
     </main>
   );
 }

@@ -49,10 +49,6 @@
   }
 }
 
-/* * {
-  border: 1px solid black;
-}  */
-
 .circle {
   height: 16px;
   width: 16px;
@@ -70,8 +66,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 10px;
-  background: hsl(var(--primary));
+  height: 0.25rem;
   transform-origin: 0%;
   z-index: 99;
 }
@@ -86,47 +81,49 @@
   width: 100%;
   height: 100%;
   top: 0;
+  left: 0;
   opacity: 0.2;
-  /* z-index: -1; */
+  z-index: -1;
 }
-
-.frame::before {
+.inverted-mesh::before {
   content: "";
-  background-image: url("/top.svg");
-  background-size: contain;
+  background-image: url("/mesh.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 40px;
+  background-position: center center;
   position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
-}
-.frame::after {
-  content: "";
-  background-image: url("/bottom.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 40px;
-  position: absolute;
-  bottom: 0;
-}
-.blob::after {
-  content: "";
-  background-image: url("/blob.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 35rem;
-  height: 35rem;
-  position: absolute;
-  top: 9rem;
-  right: 26rem;
+  left: 0;
+  opacity: 0.2;
+  z-index: -1;
+  transform: rotate(180deg);
 }
 
 @layer utilities {
-  .heading {
-    @apply font-bold text-4xl md:text-5xl text-center;
+  h1 {
+    @apply font-bold text-4xl md:text-5xl;
+  }
+  h2 {
+    @apply font-extrabold text-2xl;
+  }
+  h3 {
+    @apply text-lg text-slate-500;
+  }
+  p {
+    @apply text-base
   }
   .bg {
-    @apply bg-gradient-to-r from-slate-900 to-slate-600
+    @apply bg-gradient-to-r from-slate-900 to-slate-600;
   }
+  .gradient {
+    @apply bg-gradient-to-r from-cyan-500 to-green-500;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-green-500;
+  }
+  /* * {
+    @apply border
+  } */
 }

@@ -1,8 +1,8 @@
-const letters: string = "abcdefghijklmnopqrstuvwxyz";
+const letters: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const intervalTime: number = 30; // Interval time in milliseconds
     const delayTime: number = 3000; // Delay time before changing to the next value
     let interval: number | null = null;
-    const values: string[] = ["Developer", "Engineer", "Designer"];
+    const values: string[] = ["DEVELOPER", "ENGINEER", "DESIGNER"];
     let currentIndex: number = 0;
 
     export function changeText(): void {
