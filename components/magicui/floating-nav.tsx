@@ -71,9 +71,8 @@ export const FloatingNav = ({
         }}
       >
         {navItems.map((navItem: any, idx: number) => (
-          <Button variant={'ghost'} asChild>
+          <Button variant={"ghost"} key={`link=${idx}`} asChild>
             <Link
-              key={`link=${idx}`}
               href={navItem.link}
               className={cn("relative items-center flex space-x-1")}
             >
