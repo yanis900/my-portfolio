@@ -46,7 +46,7 @@ export default function About() {
                   </HoverCardContent>
                 </HoverCard>
                 <ArrowLeft />
-                <p>See What I've Been Up To!</p>
+                <p>See What I&apos;ve Been Up To!</p>
               </div>
             </BoxReveal>
             <Separator className="my-2" />

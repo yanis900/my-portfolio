@@ -2,10 +2,13 @@ import React from "react";
 import { projects } from "@/app/contants";
 import BoxReveal from "./magicui/box-reveal";
 import { PinContainer } from "./acerternityui/3d-pin";
+import GridPattern from "./magicui/grid-pattern";
 
 export default function Projects() {
   return (
-    <div id="projects" className="py-20">
+    <div id="projects" className="py-20 relative">
+      <GridPattern className="z[-10]"/>
+      
       <div className="w-full grid place-items-center">
         <BoxReveal duration={0.5}>
           <h1>
