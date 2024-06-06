@@ -1,8 +1,10 @@
+import { title } from "process";
+
 export const stack = [
-  { name: "nextJS", src: "nextjs.svg" },
-  { name: "mongoDB", src: "mongodb.svg" },
-  { name: "nodeJS", src: "nodejs.svg" },
-  { name: "tailwind", src: "tailwind.svg" },
+  { name: "nextJS", src: "/icons/nextjs.svg" },
+  { name: "mongoDB", src: "/icons/mongodb.svg" },
+  { name: "nodeJS", src: "/icons/nodejs.svg" },
+  { name: "tailwind", src: "/icons/tailwind.svg" },
 ];
 
 export const projects = [
@@ -10,11 +12,12 @@ export const projects = [
     name: "Ya Motors",
     type: "Car Viewer App",
     img: "/carapp.png",
-    src: "https://www.yamotors.ltd/",
+    title: "/yamotors.ltd",
+    src: "https://yamotors.ltd/",
     description: "Experience seamless car browsing with our Car Viewing App.",
     icons: {
-      1: '',
-      2: '',
+      1: '/icons/nextjs.svg',
+      2: '/icons/tailwind.svg',
       3: '',
       4: '',
       5: '',
@@ -24,12 +27,13 @@ export const projects = [
     name: "Drip Catalogue",
     type: "E-Commerce App",
     img: "/ecommerce.png",
+    title: "/dripcatalogue.shop",
     src: "https://dripcatalogue.shop/",
     description:
       "Shop the latest fashion trends with our E-commerce Clothing Store.",
       icons: {
-        1: '',
-        2: '',
+        1: '/icons/nextjs.svg',
+        2: '/icons/tailwind.svg',
         3: '',
         4: '',
         5: '',
@@ -39,13 +43,14 @@ export const projects = [
     name: "Cyber",
     type: "Crypto Dashboard App",
     img: "/cryptoapp.png",
+    title: "",
     src: "",
     description:
       "Stay on top of your crypto investments with our Crypto Dashboard.",
       icons: {
-        1: '',
-        2: '',
-        3: '',
+        1: '/icons/nextjs.svg',
+        2: '/icons/tailwind.svg',
+        3: '/icons/threejs.png',
         4: '',
         5: '',
       }

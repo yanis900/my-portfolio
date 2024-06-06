@@ -19,7 +19,7 @@ export default function Header() {
       <ul>
         <Terminal />
       </ul>
-      <ul className="flex gap-5">
+      <ul className="flex gap-5 z-[1]">
         <ContactDialog />
       </ul>
     </div>

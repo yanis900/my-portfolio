@@ -22,8 +22,8 @@ const bentoCardItems = [
     className: "lg:row-start-2 lg:row-end-3 lg:col-start-4 lg:col-end-6",
   },
   {
-    name: "",
-    description: "",
+    name: "Coding",
+    description: "fun application bla bla bla",
     background: (
       <>
         {" "}
@@ -62,12 +62,12 @@ const bentoCardItems = [
 
 export async function Skills() {
   return (
-    <main id="skills" className="w-screen relative p-20 inverted-mesh">
+    <div id="skills" className="p-20">
       <BentoGrid>
         {bentoCardItems.map((items) => (
           <BentoCard key={items.name} {...items} />
         ))}
       </BentoGrid>
-    </main>
+    </div>
   );
 }

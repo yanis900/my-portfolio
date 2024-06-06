@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+import { BorderBeam } from "./magicui/border-beam";
 
 export default function ContactPage() {
   const [firstName, setFirstName] = useState("");
@@ -54,6 +55,7 @@ export default function ContactPage() {
 
   return (
     <div className="p-8 space-y-8">
+      <BorderBeam />
       <div className="space-y-2 text-center">
         <h1 className="text-3xl font-bold">Interested in my work?</h1>
         <p className="text-gray-500 dark:text-gray-400">

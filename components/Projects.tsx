@@ -1,17 +1,12 @@
 import React from "react";
-import Image from "next/image";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
 import { projects } from "@/app/contants";
-import { BorderBeam } from "./magicui/border-beam";
 import BoxReveal from "./magicui/box-reveal";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { PinContainer } from "./acerternityui/3d-pin";
 
 export default function Projects() {
   return (
-    <main id="projects" className="relative w-screen h-screen flex flex-col items-center justify-center space-y-10 mesh">
-      <div className="w-full grid place-items-center absolute top-10">
+    <div id="projects" className="py-20">
+      <div className="w-full grid place-items-center">
         <BoxReveal duration={0.5}>
           <h1>
             <span className="gradient-text">Passion</span> For Learning, <br />{" "}
@@ -24,57 +19,50 @@ export default function Projects() {
         </BoxReveal>
       </div>
 
-      <div className="flex flex-row flex-wrap items-center justify-center gap-5 h-[25rem]">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map((project, index) => (
-          <Card
+          <div
+            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={index}
-            className="relative w-[25rem] p-5 h-full flex flex-col"
           >
-            <BorderBeam />
-            <div className="w-full h-1/2 relative overflow-hidden">
-              <div className="absolute w-full h-full rounded-3xl bg"></div>
-              <Image
-                src={project.img}
-                alt=""
-                width={500}
-                height={500}
-                className="z-100 absolute bottom-[-2rem] rotate-3 rounded-lg left-[15%]"
-              />
-            </div>
-            <div className="pt-5 space-y-2">
+            <PinContainer
+              title="/ui.aceternity.com"
+              href="https://twitter.com/mannupaaji"
+            >
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[25vh] mb-10">
+                <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg"></div>
+                <img
+                  src={project.img}
+                  alt="cover"
+                  className="z-10 absolute -bottom-4 w-5/6 rounded-lg rotate-2 "
+                />
+              </div>
               <BoxReveal duration={0.5}>
                 <h2>{project.type}</h2>
               </BoxReveal>
               <BoxReveal duration={0.5}>
-                <p>{project.description}</p>
+                <h3>{project.description}</h3>
               </BoxReveal>
-              <div className="flex justify-between items-center">
-                <BoxReveal duration={0.5}>
-                  <div className="flex flex-row space-x-[-15px]">
-                    {project.icons && Object.values(project.icons).map((icon, index) => (
-                      <Avatar key={index}>
-                        <AvatarFallback />
-                        <AvatarImage src={icon} />
-                      </Avatar>
+              <div className="flex items-center justify-between mt-7 mb-3">
+                <div className="flex items-center">
+                  {project.icons &&
+                    Object.values(project.icons).map((icon, index) => (
+                      <div
+                        key={index}
+                        className="border-white border-2 bg bg-slate-500 rounded-full lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                        style={{
+                          transform: `translateX(-${5 * index + 2}px)`,
+                        }}
+                      >
+                        <img src={icon} alt="icon5" className="p-1" />
+                      </div>
                     ))}
-                  </div>
-                </BoxReveal>
-                <BoxReveal duration={0.5}>
-                  <Button variant={"outline"} className="grid">
-                    <a
-                      href={project.src}
-                      className="flex items-center justify-center gap-2"
-                    >
-                      View
-                      <ExternalLink />
-                    </a>
-                  </Button>
-                </BoxReveal>
+                </div>
               </div>
-            </div>
-          </Card>
+            </PinContainer>
+          </div>
         ))}
       </div>
-    </main>
+    </div>
   );
 }

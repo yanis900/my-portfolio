@@ -49,18 +49,6 @@
   }
 }
 
-.circle {
-  height: 16px;
-  width: 16px;
-  border-radius: 24px;
-  border: 1px solid white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 99999999;
-}
-
 .progress-bar {
   position: fixed;
   top: 0;
@@ -83,7 +71,7 @@
   top: 0;
   left: 0;
   opacity: 0.2;
-  z-index: -1;
+  z-index: 1;
 }
 .inverted-mesh::before {
   content: "";
