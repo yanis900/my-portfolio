@@ -2,13 +2,10 @@ import React from "react";
 import { projects } from "@/app/contants";
 import BoxReveal from "./magicui/box-reveal";
 import { PinContainer } from "./acerternityui/3d-pin";
-import GridPattern from "./magicui/grid-pattern";
 
 export default function Projects() {
   return (
-    <div id="projects" className="py-20 relative">
-      <GridPattern className="z[-10]"/>
-      
+    <div id="projects" className="py-20 relative inverted-mesh">
       <div className="w-full grid place-items-center">
         <BoxReveal duration={0.5}>
           <h1>
@@ -29,15 +26,15 @@ export default function Projects() {
             key={index}
           >
             <PinContainer
-              title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
+              title={project.title}
+              href={project.src}
             >
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[25vh] mb-10">
                 <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg"></div>
                 <img
                   src={project.img}
                   alt="cover"
-                  className="z-10 absolute -bottom-4 w-5/6 rounded-lg rotate-2 "
+                  className="z-10 absolute -bottom-4 w-5/6 rounded-lg rotate-2"
                 />
               </div>
               <BoxReveal duration={0.5}>
@@ -52,12 +49,12 @@ export default function Projects() {
                     Object.values(project.icons).map((icon, index) => (
                       <div
                         key={index}
-                        className="border-white border-2 bg bg-slate-500 rounded-full lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                        className="border-white border-2 bg bg-slate-500 rounded-full lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center overflow-hidden"
                         style={{
                           transform: `translateX(-${5 * index + 2}px)`,
                         }}
                       >
-                        <img src={icon} alt="icon5" className="p-1" />
+                        <img src={icon} alt="icon5" className="p-1.5 rounded-lg" />
                       </div>
                     ))}
                 </div>

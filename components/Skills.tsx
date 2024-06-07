@@ -1,29 +1,30 @@
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import GridPattern from "./magicui/grid-pattern";
 import { cn } from "@/lib/utils";
+import { Globe } from "./Globe";
 
 const bentoCardItems = [
   {
-    name: "",
-    description: "",
+    name: "Name",
+    description: "Description",
     background: <img className="absolute -right-20 -top-20 opacity-60" />,
     className: "lg:row-start-1 lg:row-end-3 lg:col-start-1 lg:col-end-4",
   },
   {
-    name: "",
-    description: "",
-    background: <img className="absolute -right-20 -top-20 opacity-60" />,
+    name: "Name",
+    description: "Description",
+    background: "",
     className: "lg:row-start-1 lg:row-end-2 lg:col-start-4 lg:col-end-6",
   },
   {
-    name: "",
-    description: "",
+    name: "Name",
+    description: "Description",
     background: <img className="absolute -right-20 -top-20 opacity-60" />,
     className: "lg:row-start-2 lg:row-end-3 lg:col-start-4 lg:col-end-6",
   },
   {
-    name: "Coding",
-    description: "fun application bla bla bla",
+    name: "Name",
+    description: "Description",
     background: (
       <>
         {" "}
@@ -47,14 +48,14 @@ const bentoCardItems = [
     className: "lg:row-start-3 lg:row-end-5 lg:col-start-3 lg:col-end-6",
   },
   {
-    name: "",
-    description: "",
+    name: "Name",
+    description: "Description",
     background: "",
     className: "lg:row-start-3 lg:row-end-4 lg:col-start-1 lg:col-end-3",
   },
   {
-    name: "",
-    description: "",
+    name: "Name",
+    description: "Description",
     background: <img className="absolute -right-20 -top-20 opacity-60" />,
     className: "lg:row-start-4 lg:row-end-5 lg:col-start-1 lg:col-end-3",
   },
@@ -62,7 +63,17 @@ const bentoCardItems = [
 
 export async function Skills() {
   return (
-    <div id="skills" className="p-20">
+    <div id="skills" className="p-20 relative">
+      <GridPattern
+        width={30}
+        height={30}
+        x={-1}
+        y={-1}
+        strokeDasharray={"4 2"}
+        className={cn(
+          "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]"
+        )}
+      />
       <BentoGrid>
         {bentoCardItems.map((items) => (
           <BentoCard key={items.name} {...items} />

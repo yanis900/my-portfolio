@@ -1,10 +1,9 @@
-import { title } from "process";
-
 export const stack = [
   { name: "nextJS", src: "/icons/nextjs.svg" },
   { name: "mongoDB", src: "/icons/mongodb.svg" },
   { name: "nodeJS", src: "/icons/nodejs.svg" },
   { name: "tailwind", src: "/icons/tailwind.svg" },
+  { name: "typescript", src: "/icons/typescript.png" },
 ];
 
 export const projects = [
@@ -16,12 +15,12 @@ export const projects = [
     src: "https://yamotors.ltd/",
     description: "Experience seamless car browsing with our Car Viewing App.",
     icons: {
-      1: '/icons/nextjs.svg',
-      2: '/icons/tailwind.svg',
-      3: '',
-      4: '',
-      5: '',
-    }
+      1: "/icons/next.svg",
+      2: "/icons/tailwind.svg",
+      3: "/icons/typescript.png",
+      4: "/icons/sanity.png",
+      5: "/icons/mongodb.svg",
+    },
   },
   {
     name: "Drip Catalogue",
@@ -31,13 +30,13 @@ export const projects = [
     src: "https://dripcatalogue.shop/",
     description:
       "Shop the latest fashion trends with our E-commerce Clothing Store.",
-      icons: {
-        1: '/icons/nextjs.svg',
-        2: '/icons/tailwind.svg',
-        3: '',
-        4: '',
-        5: '',
-      }
+    icons: {
+      1: "/icons/next.svg",
+      2: "/icons/tailwind.svg",
+      3: "/icons/typescript.png",
+      4: "/icons/sanity.png",
+      5: "/icons/clerk.svg",
+    },
   },
   {
     name: "Cyber",
@@ -47,13 +46,13 @@ export const projects = [
     src: "",
     description:
       "Stay on top of your crypto investments with our Crypto Dashboard.",
-      icons: {
-        1: '/icons/nextjs.svg',
-        2: '/icons/tailwind.svg',
-        3: '/icons/threejs.png',
-        4: '',
-        5: '',
-      }
+    icons: {
+      1: "/icons/next.svg",
+      2: "/icons/tailwind.svg",
+      3: "/icons/typescript.png",
+      4: "/icons/three.svg",
+      5: "/icons/web3js.png",
+    },
   },
 ];
 

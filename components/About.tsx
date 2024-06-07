@@ -6,6 +6,7 @@ import BoxReveal from "./magicui/box-reveal";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { AuroraBackground } from "./acerternityui/aurora-background";
 import Header from "./Header";
+import { Button } from "./ui/button";
 
 export default function About() {
   return (
@@ -24,12 +25,17 @@ export default function About() {
               </h3>
             </BoxReveal>
             <BoxReveal duration={0.5}>
-              <div className="flex gap-2 py-2">
+              <div className="flex gap-2 py-2 items-center">
                 <HoverCard>
                   <HoverCardTrigger asChild>
-                    <a href="https://www.linkedin.com/in/yanis-aityounes/">
-                      <Linkedin />
-                    </a>
+                    <Button
+                      className="hover:invert active:border-4 active:border-white"
+                      size={"icon"}
+                    >
+                      <a href="https://www.linkedin.com/in/yanis-aityounes/">
+                        <Linkedin />
+                      </a>
+                    </Button>
                   </HoverCardTrigger>
                   <HoverCardContent>
                     <div className="font-bold">@yanis-aityounes</div>
@@ -37,9 +43,14 @@ export default function About() {
                 </HoverCard>
                 <HoverCard>
                   <HoverCardTrigger asChild>
-                    <a href="https://github.com/yanis900">
-                      <Github className="hover:opacity-50" />
-                    </a>
+                    <Button
+                      className="hover:invert active:border-4 active:border-white"
+                      size={"icon"}
+                    >
+                      <a href="https://github.com/yanis900">
+                        <Github />
+                      </a>
+                    </Button>
                   </HoverCardTrigger>
                   <HoverCardContent>
                     <div className="font-bold">@yanis900</div>
@@ -60,7 +71,7 @@ export default function About() {
                   {stack.map((item, index) => (
                     <div className="w-7 h-7" key={index}>
                       <Image
-                        className="w-full h-full"
+                        className="w-full h-full rounded-md"
                         key={index}
                         src={item.src}
                         alt={item.name}
