@@ -5,6 +5,7 @@ import Projects from "@/components/Projects";
 import { FloatingNav } from "@/components/magicui/floating-nav";
 import { navItems } from "./contants";
 import { Skills } from "@/components/Skills";
+import { Parallax } from "@/components/Parallax";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <ScrollBar />
       <FloatingNav navItems={navItems} />
       <About />
-      <Skills />
+      {/* <Skills /> */}
+      <Parallax />
       <Projects />
     </>
   );

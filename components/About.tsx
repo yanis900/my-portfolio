@@ -26,38 +26,22 @@ export default function About() {
             </BoxReveal>
             <BoxReveal duration={0.5}>
               <div className="flex gap-2 py-2 items-center">
-                <HoverCard>
-                  <HoverCardTrigger asChild>
-                    <Button
-                      className="hover:invert active:border-4 active:border-white"
-                      size={"icon"}
-                    >
-                      <a href="https://www.linkedin.com/in/yanis-aityounes/">
-                        <Linkedin />
-                      </a>
-                    </Button>
-                  </HoverCardTrigger>
-                  <HoverCardContent>
-                    <div className="font-bold">@yanis-aityounes</div>
-                  </HoverCardContent>
-                </HoverCard>
-                <HoverCard>
-                  <HoverCardTrigger asChild>
-                    <Button
-                      className="hover:invert active:border-4 active:border-white"
-                      size={"icon"}
-                    >
-                      <a href="https://github.com/yanis900">
-                        <Github />
-                      </a>
-                    </Button>
-                  </HoverCardTrigger>
-                  <HoverCardContent>
-                    <div className="font-bold">@yanis900</div>
-                  </HoverCardContent>
-                </HoverCard>
-                <ArrowLeft />
-                <p>See What I&apos;ve Been Up To!</p>
+                <Button
+                  size={"icon"}
+                  variant={"ghost"}
+                >
+                  <a href="https://www.linkedin.com/in/yanis-aityounes/">
+                    <Linkedin />
+                  </a>
+                </Button>
+                <Button
+                  size={"icon"}
+                  variant={"ghost"}
+                >
+                  <a href="https://github.com/yanis900">
+                    <Github />
+                  </a>
+                </Button>
               </div>
             </BoxReveal>
             <Separator className="my-2" />

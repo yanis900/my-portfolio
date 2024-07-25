@@ -10,7 +10,7 @@ export const projects = [
   {
     name: "Ya Motors",
     type: "Car Viewer App",
-    img: "/carapp.png",
+    img: "/web/carapp1.png",
     title: "/yamotors.ltd",
     src: "https://yamotors.ltd/",
     description: "Experience seamless car browsing with our Car Viewing App.",
