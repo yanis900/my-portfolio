@@ -14,17 +14,17 @@ export const products = [
   {
     title: "carapp",
     link: "https://yamotors.ltd",
-    thumbnail: "/images/carapp3.png",
-  },
-  {
-    title: "carapp",
-    link: "https://yamotors.ltd",
     thumbnail: "/images/carapp2.png",
   },
   {
     title: "carapp",
     link: "https://yamotors.ltd",
     thumbnail: "/images/carapp1.png",
+  },
+  {
+    title: "carapp",
+    link: "https://yamotors.ltd",
+    thumbnail: "/images/carapp3.png",
   },
   {
     title: "cryptoapp",

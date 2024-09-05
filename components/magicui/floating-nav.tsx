@@ -14,6 +14,7 @@ import { Button } from "../ui/button";
 export const FloatingNav = ({
   navItems,
   className,
+  // isVisible,
 }: {
   navItems: {
     name: string;
@@ -21,6 +22,7 @@ export const FloatingNav = ({
     icon?: JSX.Element;
   }[];
   className?: string;
+  // isVisible?: boolean;
 }) => {
   const { scrollYProgress } = useScroll();
 

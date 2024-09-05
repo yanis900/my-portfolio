@@ -9,8 +9,6 @@ import { Parallax } from "@/components/Parallax";
 export default function Home() {
   return (
     <>
-      <ScrollBar />
-      <FloatingNav navItems={navItems} />
       <About />
       <Parallax />
       <Projects />

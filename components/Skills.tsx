@@ -1,7 +1,6 @@
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import GridPattern from "./magicui/grid-pattern";
 import { cn } from "@/lib/utils";
-import { Globe } from "./Globe";
 
 const bentoCardItems = [
   {

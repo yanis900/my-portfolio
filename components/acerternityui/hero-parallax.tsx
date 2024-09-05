@@ -20,7 +20,7 @@ export const HeroParallax = ({
   }[];
 }) => {
   const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
+  const secondRow = products.slice(4, 10);
   const thirdRow = products.slice(10, 15);
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
@@ -150,8 +150,8 @@ export const ProductCard = ({
           alt={product.title}
         />
       </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-30 bg-black pointer-events-none border-2 border-black"></div>
+      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 gradient text-white px-1">
         {product.title}
       </h2>
     </motion.div>

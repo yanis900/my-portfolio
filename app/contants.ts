@@ -6,8 +6,7 @@ export const stack = [
 
 export const projects = [
   {
-    name: "Ya Motors",
-    type: "Car Viewer App",
+    name: "Car Viewer App",
     img: "/images/carapp1.png",
     slug: "carviewer",
     description: "Experience seamless car browsing with our Car Viewing App.",
@@ -20,12 +19,11 @@ export const projects = [
     },
   },
   {
-    name: "",
-    type: "Github Api Tracker",
+    name: "Github Api Tracker",
     img: "/images/githubapp.png",
     slug: "githubapp",
     description:
-      "Connect your Github and Compete with friends on contributions",
+      "Connect your Github and Compete with friends on contributions.",
     icons: {
       1: "",
       2: "",
@@ -35,8 +33,7 @@ export const projects = [
     },
   },
   {
-    name: "Cyber",
-    type: "Crypto Dashboard App",
+    name: "Crypto Dashboard App",
     img: "/images/cryptoapp1.png",
     slug: "cryptoapp",
     description:

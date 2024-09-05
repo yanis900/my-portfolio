@@ -25,7 +25,7 @@ export default function Projects() {
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={index}
           >
-            <PinContainer title='View' href={`/projects/${project.slug}`}>
+            <PinContainer title={'View'} href={`/projects/${project.slug}`}>
                 <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[25vh] mb-10">
                   <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg"></div>
                   <img
@@ -35,7 +35,7 @@ export default function Projects() {
                   />
                 </div>
                 <BoxReveal duration={0.5}>
-                  <h2>{project.type}</h2>
+                  <h2>{project.name}</h2>
                 </BoxReveal>
                 <BoxReveal duration={0.5}>
                   <h3>{project.description}</h3>
