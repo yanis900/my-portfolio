@@ -52,9 +52,9 @@ export default function Page({
   if (!project) {
     return <div>Project not found</div>;
   }
-  // project.name
+  
   return (
-    <div className="flex flex-col min-h-[100dvh] overflow-hidden gap-5">
+    <div className="flex flex-col min-h-[100dvh] gap-5">
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container grid gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-4">
@@ -80,32 +80,30 @@ export default function Page({
       </section>
       <hr />
       <section>
-        <div className="container grid gap-8 px-4 md:px-6">
-          <div className="grid place-content-center">
-            <Carousel className="max-w-full">
-              <CarouselContent>
-                {project.images &&
-                  Object.values(project.images).map((image, index) => (
-                    <CarouselItem key={index}>
-                      <div className="flex flex-col items-center gap-2">
-                        <img
-                          width={800}
-                          src={image.src}
-                          alt={`Project Image ${index + 1}`}
-                          className="mx-auto aspect-video overflow-hidden rounded-xl object-contain border"
-                        />
-                        <hr />
-                        <p className="text-sm text-muted-foreground mt-2 max-w-3xl text-center">
-                          {image.description}
-                        </p>
-                      </div>
-                    </CarouselItem>
-                  ))}
-              </CarouselContent>
-              <CarouselPrevious ref={previousRef} />
-              <CarouselNext ref={nextRef} />
-            </Carousel>
-          </div>
+        <div className="container relative grid place-content-center p-5 w-full max-w-3xl mx-auto">
+          <Carousel>
+            <CarouselContent>
+              {project.images &&
+                Object.values(project.images).map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="flex flex-col items-center gap-2 cursor-pointer">
+                      <img
+                        width={800}
+                        src={image.src}
+                        alt={`Project Image ${index + 1}`}
+                        className="mx-auto aspect-video overflow-hidden rounded-xl object-contain border"
+                      />
+                      <hr />
+                      <p className="text-sm text-muted-foreground mt-2 max-w-3xl text-center">
+                        {image.description}
+                      </p>
+                    </div>
+                  </CarouselItem>
+                ))}
+            </CarouselContent>
+            <CarouselPrevious ref={previousRef} />
+            <CarouselNext ref={nextRef} />
+          </Carousel>
         </div>
       </section>
       <hr />

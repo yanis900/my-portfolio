@@ -123,3 +123,4 @@ export const navItems = [
   { name: "Hero", link: "#hero" },
   { name: "Projects", link: "#projects" },
 ];
+
