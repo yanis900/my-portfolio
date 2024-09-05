@@ -30,10 +30,6 @@ export default function Page({
     (project: Project) => project.slug === params.slug
   );
 
-  if (!project) {
-    return <div>Project not found</div>;
-  }
-
   const previousRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
@@ -53,6 +49,9 @@ export default function Page({
     };
   }, []);
 
+  if (!project) {
+    return <div>Project not found</div>;
+  }
   // project.name
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -121,7 +120,7 @@ export default function Page({
             <ul className="grid gap-2 text-muted-foreground">
               {project.skills &&
                 Object.values(project.skills).map((skill, index) => (
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2" key={index}>
                     <CheckIcon className="w-4 h-4" />
                     {skill}
                   </li>
@@ -139,7 +138,7 @@ export default function Page({
             <ul className="grid gap-2 text-muted-foreground">
               {project.plans &&
                 Object.values(project.plans).map((skill, index) => (
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2" key={index}>
                     <CheckIcon className="w-4 h-4" />
                     {skill}
                   </li>
