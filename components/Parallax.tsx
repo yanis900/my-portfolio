@@ -9,16 +9,41 @@ export const products = [
   {
     title: "carapp",
     link: "https://yamotors.ltd",
-    thumbnail: "/web/carapp3.png",
+    thumbnail: "/images/carapp4.png",
   },
   {
     title: "carapp",
     link: "https://yamotors.ltd",
-    thumbnail: "/web/carapp2.png",
+    thumbnail: "/images/carapp3.png",
   },
   {
     title: "carapp",
     link: "https://yamotors.ltd",
-    thumbnail: "/web/carapp1.png",
+    thumbnail: "/images/carapp2.png",
+  },
+  {
+    title: "carapp",
+    link: "https://yamotors.ltd",
+    thumbnail: "/images/carapp1.png",
+  },
+  {
+    title: "cryptoapp",
+    link: "",
+    thumbnail: "/images/cryptoapp1.png",
+  },
+  {
+    title: "cryptoapp",
+    link: "",
+    thumbnail: "/images/cryptoapp2.png",
+  },
+  {
+    title: "cryptoapp",
+    link: "",
+    thumbnail: "/images/cryptoapp3.png",
+  },
+  {
+    title: "cryptoapp",
+    link: "",
+    thumbnail: "/images/cryptoapp4.png",
   },
 ];

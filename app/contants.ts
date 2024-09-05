@@ -1,18 +1,15 @@
 export const stack = [
   { name: "nextJS", src: "/icons/nextjs.svg" },
-  { name: "mongoDB", src: "/icons/mongodb.svg" },
-  { name: "nodeJS", src: "/icons/nodejs.svg" },
-  { name: "tailwind", src: "/icons/tailwind.svg" },
   { name: "typescript", src: "/icons/typescript.png" },
+  { name: "nodeJS", src: "/icons/nodejs.svg" },
 ];
 
 export const projects = [
   {
     name: "Ya Motors",
     type: "Car Viewer App",
-    img: "/web/carapp1.png",
-    title: "/yamotors.ltd",
-    src: "https://yamotors.ltd/",
+    img: "/images/carapp1.png",
+    slug: "carviewer",
     description: "Experience seamless car browsing with our Car Viewing App.",
     icons: {
       1: "/icons/next.svg",
@@ -23,27 +20,25 @@ export const projects = [
     },
   },
   {
-    name: "Drip Catalogue",
-    type: "E-Commerce App",
-    img: "/ecommerce.png",
-    title: "/dripcatalogue.shop",
-    src: "https://dripcatalogue.shop/",
+    name: "",
+    type: "Github Api Tracker",
+    img: "/images/githubapp.png",
+    slug: "githubapp",
     description:
-      "Shop the latest fashion trends with our E-commerce Clothing Store.",
+      "Connect your Github and Compete with friends on contributions",
     icons: {
-      1: "/icons/next.svg",
-      2: "/icons/tailwind.svg",
-      3: "/icons/typescript.png",
-      4: "/icons/sanity.png",
-      5: "/icons/clerk.svg",
+      1: "",
+      2: "",
+      3: "",
+      4: "",
+      5: "",
     },
   },
   {
     name: "Cyber",
     type: "Crypto Dashboard App",
-    img: "/cryptoapp.png",
-    title: "",
-    src: "",
+    img: "/images/cryptoapp1.png",
+    slug: "cryptoapp",
     description:
       "Stay on top of your crypto investments with our Crypto Dashboard.",
     icons: {

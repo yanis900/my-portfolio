@@ -61,7 +61,7 @@
 
 .mesh::before {
   content: "";
-  background-image: url("/mesh.jpg");
+  background-image: url("/images/mesh.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -75,7 +75,7 @@
 }
 .inverted-mesh::before {
   content: "";
-  background-image: url("/mesh.jpg");
+  background-image: url("/images/mesh.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -91,7 +91,7 @@
 
 @layer utilities {
   h1 {
-    @apply font-bold text-4xl md:text-5xl;
+    @apply text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl;
   }
   h2 {
     @apply font-extrabold text-2xl;

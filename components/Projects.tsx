@@ -9,7 +9,7 @@ export default function Projects() {
       <div className="w-full grid place-items-center">
         <BoxReveal duration={0.5}>
           <h1>
-            <span className="gradient-text">Passion</span> For Learning, <br />{" "}
+            <span className="gradient text-white px-1">Passion</span> For Learning, <br />{" "}
           </h1>
         </BoxReveal>
         <BoxReveal duration={0.5}>
@@ -25,40 +25,41 @@ export default function Projects() {
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={index}
           >
-            <PinContainer
-              title={project.title}
-              href={project.src}
-            >
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[25vh] mb-10">
-                <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg"></div>
-                <img
-                  src={project.img}
-                  alt="cover"
-                  className="z-10 absolute -bottom-4 w-5/6 rounded-lg rotate-2"
-                />
-              </div>
-              <BoxReveal duration={0.5}>
-                <h2>{project.type}</h2>
-              </BoxReveal>
-              <BoxReveal duration={0.5}>
-                <h3>{project.description}</h3>
-              </BoxReveal>
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {project.icons &&
-                    Object.values(project.icons).map((icon, index) => (
-                      <div
-                        key={index}
-                        className="border-white border-2 bg bg-slate-500 rounded-full lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center overflow-hidden"
-                        style={{
-                          transform: `translateX(-${5 * index + 2}px)`,
-                        }}
-                      >
-                        <img src={icon} alt="icon5" className="p-1.5 rounded-lg" />
-                      </div>
-                    ))}
+            <PinContainer title='View' href={`/projects/${project.slug}`}>
+                <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[25vh] mb-10">
+                  <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg"></div>
+                  <img
+                    src={project.img}
+                    alt="cover"
+                    className="z-10 absolute -bottom-4 w-5/6 rounded-lg rotate-2"
+                  />
                 </div>
-              </div>
+                <BoxReveal duration={0.5}>
+                  <h2>{project.type}</h2>
+                </BoxReveal>
+                <BoxReveal duration={0.5}>
+                  <h3>{project.description}</h3>
+                </BoxReveal>
+                <div className="flex items-center justify-between mt-7 mb-3">
+                  <div className="flex items-center">
+                    {project.icons &&
+                      Object.values(project.icons).map((icon, index) => (
+                        <div
+                          key={index}
+                          className="border-white border-2 bg bg-slate-500 rounded-full lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center overflow-hidden"
+                          style={{
+                            transform: `translateX(-${5 * index + 2}px)`,
+                          }}
+                        >
+                          <img
+                            src={icon}
+                            alt="icon5"
+                            className="p-1.5 rounded-lg"
+                          />
+                        </div>
+                      ))}
+                  </div>
+                </div>
             </PinContainer>
           </div>
         ))}

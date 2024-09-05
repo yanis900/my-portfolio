@@ -16,36 +16,31 @@ export default function About() {
         <div className="relative w-screen h-full flex flex-col-reverse sm:flex-row items-center justify-center sm:pb-36 z-10">
           <div>
             <BoxReveal duration={0.5}>
-              <h1>Full-Stack Developer</h1>
+              <h1><span className="bg-black text-white px-1">Software</span> Engineer</h1>
             </BoxReveal>
+            <Separator className="my-2" />
+
             <BoxReveal duration={0.5}>
               <h3 className="py-2">
-                Hi 👋 I am Yanis Aityounes, a developer based in <br />
+                Hi 👋 I am Yanis Aityounes, a Softare Engineer based in <br />
                 London, United Kingdom 📍
               </h3>
             </BoxReveal>
             <BoxReveal duration={0.5}>
               <div className="flex gap-2 py-2 items-center">
-                <Button
-                  size={"icon"}
-                  variant={"ghost"}
-                >
+                <Button size={"icon"} variant={"ghost"}>
                   <a href="https://www.linkedin.com/in/yanis-aityounes/">
                     <Linkedin />
                   </a>
                 </Button>
-                <Button
-                  size={"icon"}
-                  variant={"ghost"}
-                >
+                <Button size={"icon"} variant={"ghost"}>
                   <a href="https://github.com/yanis900">
                     <Github />
                   </a>
                 </Button>
               </div>
             </BoxReveal>
-            <Separator className="my-2" />
-            <div className="flex gap-2 items-center space-x-2">
+            {/* <div className="flex gap-2 items-center space-x-2">
               <BoxReveal duration={0.5}>
                 <p className="font-bold">Tech Stack:</p>
               </BoxReveal>
@@ -66,12 +61,12 @@ export default function About() {
                   ))}
                 </div>
               </BoxReveal>
-            </div>
+            </div> */}
           </div>
           <div>
             <Image
               className="rounded-full"
-              src={"/profile.png"}
+              src={"/images/profile.png"}
               alt={"profile"}
               width={300}
               height={300}
