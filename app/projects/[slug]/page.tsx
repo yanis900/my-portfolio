@@ -54,7 +54,7 @@ export default function Page({
   }
   // project.name
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className="flex flex-col min-h-[100dvh] overflow-hidden gap-5">
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container grid gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-4">
@@ -78,10 +78,11 @@ export default function Page({
           />
         </div>
       </section>
+      <hr />
       <section>
         <div className="container grid gap-8 px-4 md:px-6">
           <div className="grid place-content-center">
-            <Carousel className="w-full">
+            <Carousel className="max-w-full">
               <CarouselContent>
                 {project.images &&
                   Object.values(project.images).map((image, index) => (
@@ -107,6 +108,7 @@ export default function Page({
           </div>
         </div>
       </section>
+      <hr />
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container grid gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-4">
