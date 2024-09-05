@@ -56,6 +56,7 @@ export const HeroParallax = ({
   );
   return (
     <div
+    id="hero"
       ref={ref}
       className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >

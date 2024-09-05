@@ -8,8 +8,8 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { ContactDialog } from "../ContactDialog";
 import { Button } from "../ui/button";
+import { ContactBtn } from "../ContactBtn";
 
 export const FloatingNav = ({
   navItems,
@@ -83,7 +83,7 @@ export const FloatingNav = ({
             </Link>
           </Button>
         ))}
-        <ContactDialog />
+        <ContactBtn />
       </motion.div>
     </AnimatePresence>
   );

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { ContactDialog } from "./ContactDialog";
+import { ContactBtn } from "./ContactBtn";
 import { Terminal } from "lucide-react";
 import { FloatingNav } from "./magicui/floating-nav";
 import { navItems } from "@/app/contants";
@@ -14,7 +14,7 @@ export default function Header() {
         <Terminal />
       </ul>
       <ul className="flex gap-5 z-[1]">
-        <ContactDialog />
+        <ContactBtn />
       </ul>
       <FloatingNav navItems={navItems} />
     </div>

@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import ContactPage from "./Contact";
 import { BorderBeam } from "./magicui/border-beam";
 
-export function ContactDialog() {
+export function ContactBtn() {
   return (
     <Dialog>
       <DialogTrigger asChild>
