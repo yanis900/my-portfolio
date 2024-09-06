@@ -52,7 +52,7 @@ export default function Page({
   if (!project) {
     return <div>Project not found</div>;
   }
-  
+
   return (
     <div className="flex flex-col min-h-[100dvh] gap-5">
       <section className="w-full py-12 md:py-24 lg:py-32">
@@ -86,15 +86,14 @@ export default function Page({
               {project.images &&
                 Object.values(project.images).map((image, index) => (
                   <CarouselItem key={index}>
-                    <div className="flex flex-col items-center gap-2 cursor-pointer">
+                    <div className="flex flex-col items-center gap-2">
                       <img
                         width={800}
                         src={image.src}
-                        alt={`Project Image ${index + 1}`}
                         className="mx-auto aspect-video overflow-hidden rounded-xl object-contain border"
                       />
                       <hr />
-                      <p className="text-sm text-muted-foreground mt-2 max-w-3xl text-center">
+                      <p className="text-sm text-muted-foreground mt-2 max-w-3xl text-center border p-2 rounded-xl">
                         {image.description}
                       </p>
                     </div>
@@ -132,8 +131,8 @@ export default function Page({
               Future Plans
             </h2>
             <p className="text-muted-foreground md:text-lg">
-              Here are some ideas I have for expanding and improving this
-              project in the future.
+              Ideas I have for expanding and improving this project in the
+              future:
             </p>
             <ul className="grid gap-2 text-muted-foreground">
               {project.plans &&

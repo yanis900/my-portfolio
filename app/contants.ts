@@ -66,14 +66,60 @@ export const projects = [
       },
       10: {
         src: "/carapp/react-email.png",
-        description: "",
+        description:
+          "This image displays the React component responsible for generating and sending personalized emails in the Car Viewer App. The component uses the Resend API to dynamically populate the email content with the recipient's first and last name. Styled using Tailwind CSS, the email includes a thank-you message confirming receipt of the user's message and provides details about the expected response time. The component demonstrates the integration of React, Resend API, and Tailwind to create responsive and customized email templates.",
       },
       11: {
         src: "/carapp/contact-component.png",
-        description: "",
+        description:
+          "This image shows the React contact form component that captures user input such as first name, last name, email, phone number, and message. It uses useState to manage the form's state and handle input changes. Upon form submission, the component sends the data to a server via an async function and displays feedback to the user. The component is designed to ensure smooth form submission with proper validation and error handling, providing a seamless user experience.",
       },
       12: {
         src: "/carapp/sanity-studio.png",
+        description:
+          "This image displays the Sanity Studio interface used for managing and editing content in the Car Viewer App. Sanity Studio provides a user-friendly CMS where car listings can be created, updated, and organized. The interface allows you to input various details about each car, such as make, model, year, price, and more. It also supports uploading images and generating slugs for dynamic routing. This setup makes it easy to manage car data in a structured and visually intuitive environment.",
+      },
+    },
+    skills: {
+      "1": "React with TypeScript – Developing and managing components.",
+      "2": "State management – Using useState for form inputs and submission control.",
+      "3": "Form handling – Submitting and validating forms using async/await.",
+      "4": "Next.js – Implementing server-side form submission handling and dynamic routing.",
+      "5": "Data fetching – Using fetch API to send and retrieve data.",
+      "6": "MongoDB with Mongoose – Designing and implementing database schemas.",
+      "7": "Database management – Managing collections and data in MongoDB.",
+      "8": "Email automation – Sending automated responses using Resend API.",
+      "9": "Error handling – Preventing multiple submissions and managing submission errors.",
+      "10": "React Hooks – Utilizing useRef and useEffect for event handling.",
+      "11": "TypeScript types – Defining and working with complex data structures like cars.",
+      "12": "GROQ queries – Fetching data from a CMS using GROQ in Next.js.",
+      "13": "Dynamic routing – Handling dynamic routes based on URL parameters in Next.js.",
+      "14": "Data processing – Using find to locate and filter data based on URL parameters.",
+      "15": "Server-side logic – Processing and rendering data server-side in Next.js.",
+    },
+    plans: {
+      1: "",
+      2: "",
+      3: "",
+    },
+  },
+  {
+    name: "Github Api Tracker",
+    img: "/images/githubapp.png",
+    src: "",
+    slug: "githubapp",
+    description:
+      "Connect your Github and Compete with friends on contributions.",
+    icons: {
+      1: "/icons/next.svg",
+      2: "/icons/javascript.svg",
+      3: "/icons/mongodb.svg",
+      4: "/icons/nodejs.svg",
+      5: "/icons/express.svg",
+    },
+    images: {
+      1: {
+        src: "",
         description: "",
       },
     },
@@ -89,22 +135,9 @@ export const projects = [
     },
   },
   {
-    name: "Github Api Tracker",
-    img: "/images/githubapp.png",
-    slug: "githubapp",
-    description:
-      "Connect your Github and Compete with friends on contributions.",
-    icons: {
-      1: "/icons/next.svg",
-      2: "/icons/javascript.svg",
-      3: "/icons/mongodb.svg",
-      4: "/icons/nodejs.svg",
-      5: "/icons/express.svg",
-    },
-  },
-  {
     name: "Crypto Dashboard App",
     img: "/images/cryptoapp1.png",
+    src: "",
     slug: "cryptoapp",
     description:
       "Stay on top of your crypto investments with our Crypto Dashboard.",
@@ -115,6 +148,22 @@ export const projects = [
       4: "/icons/three.svg",
       5: "/icons/web3js.png",
     },
+    images: {
+      1: {
+        src: "",
+        description: "",
+      },
+    },
+    skills: {
+      1: "",
+      2: "",
+      3: "",
+    },
+    plans: {
+      1: "",
+      2: "",
+      3: "",
+    },
   },
 ];
 
@@ -123,4 +172,3 @@ export const navItems = [
   { name: "Hero", link: "#hero" },
   { name: "Projects", link: "#projects" },
 ];
-

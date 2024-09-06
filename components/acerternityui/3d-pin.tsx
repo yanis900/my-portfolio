@@ -74,7 +74,7 @@ export const PinPerspective = ({
             className="relative gradient flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10"
             style={{ pointerEvents: "auto" }}
           >
-            <span className="relative z-20 gradient text-white text-xs font-bold inline-block p-2">
+            <span className="relative z-20 gradient text-white text-s font-bold inline-block p-1.5">
               {title}
             </span>
 
