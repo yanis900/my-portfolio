@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { projects } from "@/app/contants";
-import { CheckIcon, ExternalLink } from "lucide-react";
+import { ArrowLeft, CheckIcon, ExternalLink } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -16,7 +16,6 @@ import Link from "next/link";
 interface Project {
   name: string;
   slug: string;
-  description: string;
 }
 
 export default function Page({
@@ -54,22 +53,38 @@ export default function Page({
   }
 
   return (
-    <div className="flex flex-col min-h-[100dvh] gap-5">
+    <div className="flex flex-col min-h-[100dvh] gap-5 relative">
+      <Link
+        className="absolute top-5 left-5 flex items-center justify-center"
+        href="/"
+      >
+        <ArrowLeft />
+      </Link>
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container grid gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
-          <div className="space-y-4">
-            <h1>{project.name}</h1>
-            <p className="text-muted-foreground md:text-xl">
-              {project.description}
-            </p>
-            <Button>
-              <Link
-                href={project.src || "/"}
-                className="flex items-center justify-center gap-2"
-              >
-                View <ExternalLink />
-              </Link>
-            </Button>
+          <div className="space-y-4 flex flex-col gap-5">
+            <div className="space-y-2">
+              <h1>{project.name}</h1>
+              <Button>
+                <Link
+                  href={project.src || "/"}
+                  className="flex items-center justify-center gap-2"
+                >
+                  View current deployment <ExternalLink />
+                </Link>
+              </Button>
+            </div>
+            <div className="space-y-2">
+              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
+                Project Goal
+              </h2>
+              <h3 className="text-muted-foreground md:text-lg">
+                This is where I explain the purpose of the project:
+              </h3>
+              <p className="grid gap-2 text-muted-foreground">
+                {project.goal}
+              </p>
+            </div>
           </div>
           <Safari
             url={`${project.slug}`}

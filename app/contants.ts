@@ -11,6 +11,8 @@ export const projects = [
     src: "https://www.yamotors.ltd",
     slug: "carviewer",
     description: "Experience seamless car browsing with our Car Viewing App.",
+    goal:
+      "Through a mutual friend, I was introduced to a client who needed a website to showcase their car inventory. I worked closely with them to design and develop a site that not only displays the cars but also provides detailed information, including service history, technical specifications, and other essential details. The project allowed me to combine my technical skills with a user-friendly layout to create an intuitive platform for customers to browse and learn more about the cars on offer.",
     icons: {
       1: "/icons/next.svg",
       2: "/icons/tailwind.svg",
@@ -110,6 +112,7 @@ export const projects = [
     slug: "githubapp",
     description:
       "Connect your Github and Compete with friends on contributions.",
+    goal: "",
     icons: {
       1: "/icons/next.svg",
       2: "/icons/javascript.svg",
@@ -141,6 +144,7 @@ export const projects = [
     slug: "cryptoapp",
     description:
       "Stay on top of your crypto investments with our Crypto Dashboard.",
+    goal: "",
     icons: {
       1: "/icons/next.svg",
       2: "/icons/tailwind.svg",

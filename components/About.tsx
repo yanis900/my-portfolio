@@ -20,7 +20,7 @@ export default function About() {
 
             <BoxReveal duration={0.5}>
               <h3 className="py-2">
-                Hi 👋 I am Yanis Aityounes, a Softare Engineer based in <br />
+                Hi 👋 I am Yanis Aityounes, a Software Engineer based in <br />
                 London, United Kingdom 📍
               </h3>
             </BoxReveal>
