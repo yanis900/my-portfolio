@@ -137,7 +137,7 @@ export const projects = [
   {
     name: "Crypto Dashboard App",
     img: "/images/cryptoapp1.png",
-    src: "",
+    src: "https://crypto-dashboard-flax-five.vercel.app/dashboard",
     slug: "cryptoapp",
     description:
       "Stay on top of your crypto investments with our Crypto Dashboard.",
