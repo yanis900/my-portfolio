@@ -4,8 +4,8 @@ import { projects } from "@/app/contants";
 import { ArrowLeft, CheckIcon, ChevronDown, ExternalLink } from "lucide-react";
 import Safari from "@/components/magicui/safari";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { StickyScroll } from "@/components/acerternityui/sticky-scroll-reveal";
+import Link from "next/link";
 
 interface Project {
   name: string;
@@ -34,9 +34,9 @@ export default function Page({
   }));
 
   return (
-    <div className="flex flex-col min-h-[100dvh] gap-5 relative">
+    <div className="flex flex-col min-h-[100dvh] gap-5">
       <Link
-        className="absolute top-5 left-5 flex items-center justify-center"
+        className="w-6 ml-5 mt-5"
         href={'/'}
       >
         <ArrowLeft />

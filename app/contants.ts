@@ -64,7 +64,6 @@ export const projects: Projects[] = [
       },
       2: {
         title: "Mongoose Schema for Contact Form",
-
         src: "/projects/carapp/code/mongodb-schema-code.png",
         description:
           "This image shows the Mongoose schema definition for storing contact form data in a MongoDB database. The schema includes fields for first name, last name, email, phone, message, and date. Each field is typed, and the 'date' field is automatically set to the current date by default. This schema is used to define and model the structure of contact form entries in the database.",
@@ -183,21 +182,24 @@ export const projects: Projects[] = [
         description: "",
       },
     },
-    skills: {
-      1: "",
-      2: "",
-      3: "",
-    },
+    skills: {},
     plans: {
-      1: "",
-      2: "",
-      3: "",
+      1: "Real-Time Updates for Leaderboard: Implement real-time updates on the leaderboard using WebSockets.",
+      2: "Contribution Trends: Visualize contribution trends over time by fetching data for a user's contributions over the last year and plotting it as a graph using Chart.js or D3.js.",
+      3: "Compare GitHub Users: Add a comparison feature where users can select two or more GitHub users from the leaderboard and compare their stats.",
+      4: "Search and Filter: Implement search and filter functionality for the leaderboard, allowing users to search for specific profiles or filter based on various criteria.",
+      5: "Badge System: Gamify the leaderboard by adding badges for users based on their achievements, such as top contributor, repository star, or frequent commits.",
+      6: "GitHub API Rate Limiting Alerts: Add a feature to track the remaining GitHub API rate limits and alert the user when they're approaching the limit.",
+      7: "User Profile Caching: Implement caching to reduce redundant API calls by fetching data from local storage or server-side cache if it hasn't expired.",
+      8: "User Statistics Breakdown: Provide a detailed breakdown of user statistics, such as top languages used, most starred repositories, or total lines of code written.",
+      9: "Export Data: Allow users to export their leaderboard or profile data as CSV or JSON files for further analysis.",
+      10: "Dark Mode: Add a toggle for dark mode to enhance UI and allow user customization.",
     },
   },
   // Crypto Dashboard app
   {
     name: "Crypto Dashboard App",
-    img: "/images/cryptoapp1.png",
+    img: "/images/cryptoapp5.png",
     src: "https://crypto-dashboard-flax-five.vercel.app/dashboard",
     slug: "cryptoapp",
     description:
@@ -211,10 +213,41 @@ export const projects: Projects[] = [
       5: "/icons/web3js.png",
     },
     images: {
-      1: {
-        title: "",
-        src: "",
-        description: "",
+      "1": {
+        title: "Authentication Middleware",
+        src: "/projects/cryptoapp/code/auth-middleware-code.png",
+        description:
+          "This code defines an authentication middleware that manages access to certain routes. Public routes like `/`, `/signup`, and `/login` are accessible without authentication, while other routes likely require the user to be authenticated.",
+      },
+      "2": {
+        title: "BNB to Fiat Conversion",
+        src: "/projects/cryptoapp/code/conversion-code.png",
+        description:
+          "This code defines an asynchronous function `binanceToFiat`, which converts a given amount of BNB to a specified fiat currency using an exchange rate. It takes `amountInBnb` and `convertTo` (a supported currency) as parameters, fetches the conversion rate, and calculates the equivalent fiat amount.",
+      },
+      "3": {
+        title: "Fetch Balance Using Web3",
+        src: "/projects/cryptoapp/code/fetch-balance-code.png",
+        description:
+          "This code fetches the user's balance from MetaMask using Web3. It retrieves the balance in Wei and converts it to Ether. Additionally, it uses the BNB to fiat conversion function to display the balance in USD as well. Error handling is implemented in case MetaMask is not found or the balance retrieval fails.",
+      },
+      "4": {
+        title: "Fetch Total Transactions",
+        src: "/projects/cryptoapp/code/fetch-total-transactions-code.png",
+        description:
+          "This function fetches the total number of transactions for the user's Ethereum account using Web3. It interacts with MetaMask and retrieves the total transaction count for the user's wallet, handling errors if MetaMask is not found or the fetching process fails.",
+      },
+      "5": {
+        title: "Lightweight Chart Creation",
+        src: "/projects/cryptoapp/code/lightweight-charts-code.png",
+        description:
+          "This code defines the creation of a lightweight chart using the `createChart` function from TradingView. It sets the layout options, grid lines, and visibility of the price scale and time scale for the chart. The chart is rendered inside a container with a responsive width and height.",
+      },
+      "6": {
+        title: "3D Globe with Three.js",
+        src: "/projects/cryptoapp/code/three-globe-code.png",
+        description:
+          "This code creates a 3D globe using Three.js. It loads textures for the globe's surface and specular highlights. The globe is displayed within a Canvas, and the OrbitControls are used to manage user interaction, such as rotating the globe. The ambient light adds illumination to the scene.",
       },
     },
     skills: {
@@ -223,9 +256,14 @@ export const projects: Projects[] = [
       3: "",
     },
     plans: {
-      1: "",
-      2: "",
-      3: "",
+      1: "Current Market Data Integration: Fetch live cryptocurrency prices using an API and display them on the dashboard, with the option to set price alerts.",
+      2: "User’s Recent Transactions: Display a list of recent transactions with details like hash, timestamp, gas fees, and status. Add transaction filtering based on criteria.",
+      3: "Portfolio Overview: Fetch and display all tokens in the user's wallet and visualize portfolio performance with historical charts.",
+      4: "Watchlist Feature: Allow users to create a watchlist of cryptocurrencies or tokens and track metrics like price, market cap, etc.",
+      5: "Staking and Earning Features: Show staking options for tokens held by the user and display available yield farming opportunities.",
+      6: "Gas Fee Estimation: Display real-time gas prices (low, average, high) and offer a gas fee estimator for optimizing transaction costs.",
+      7: "NFT Integration: Display NFTs held by the user and allow them to track the value of NFTs by integrating with platforms like OpenSea.",
+      8: "Analytics and Insights: Provide transaction analytics and insights, and integrate a risk assessment tool to flag suspicious transactions.",
     },
   },
 ];

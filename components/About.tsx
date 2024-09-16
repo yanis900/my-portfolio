@@ -14,13 +14,13 @@ export default function About() {
         <div className="relative w-screen h-full flex flex-col-reverse sm:flex-row items-center justify-center sm:pb-36 z-10">
           <div>
             <BoxReveal duration={0.5}>
-              <h1><span className="bg-black text-white px-1">Software</span> Engineer</h1>
+              <h1><span className="bg-black text-white px-2">Full-Stack</span> Developer</h1>
             </BoxReveal>
             <Separator className="my-2" />
 
             <BoxReveal duration={0.5}>
               <h3 className="py-2">
-                Hi 👋 I am Yanis Aityounes, a Software Engineer based in <br />
+                Hi 👋 I am Yanis Aityounes, a Full-Stack Developer based in <br />
                 London, United Kingdom 📍
               </h3>
             </BoxReveal>
