@@ -13,7 +13,7 @@ export default function Certifications() {
             My <span className="text-white bg px-2">Certifications</span>
           </h1>
           <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl/relaxed">
-            I&apos;m proud to showcase the certifications I've earned through my
+            I&apos;m proud to showcase the certifications I&apos;ve earned through my
             dedication and hard work.
           </p>
         </div>
