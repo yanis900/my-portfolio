@@ -5,7 +5,7 @@ import { PinContainer } from "./acerternityui/3d-pin";
 
 export default function Projects() {
   return (
-    <div id="projects" className="py-20 relative border">
+    <div id="projects" className="py-20 relative">
       <div className="w-full grid place-items-center">
         <BoxReveal duration={0.5}>
           <h1>

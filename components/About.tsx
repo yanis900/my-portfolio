@@ -12,7 +12,7 @@ export default function About() {
         <Header />
         <div className="relative w-screen h-screen z-10">
           <div className="h-[80vh] grid grid-cols-1 md:grid-cols-2 w-full max-w-4xl mx-auto">
-            <div className="flex flex-col gap-4 items-center justify-center md:items-start">
+            <div className="flex flex-col gap-4 items-center justify-center md:items-start sm:w-[600px]">
               <BoxReveal duration={0.5}>
                 <h1 className="text-center md:text-left">
                   <span className="bg-black text-white px-2">Full-Stack</span>{" "}
