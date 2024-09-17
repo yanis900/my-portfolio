@@ -39,6 +39,14 @@ type NavItems = {
   link: string;
 };
 
+type Certifications = {
+  name: string;
+  company: string;
+  src: string;
+  description: string;
+  completed: boolean;
+};
+
 export const projects: Projects[] = [
   // Car Viewer App
   {
@@ -266,10 +274,143 @@ export const projects: Projects[] = [
       8: "Analytics and Insights: Provide transaction analytics and insights, and integrate a risk assessment tool to flag suspicious transactions.",
     },
   },
+  // Portfolio
+  {
+    name: "Portfolio App",
+    img: "",
+    src: "/images/portfolio.png",
+    slug: "portfolio",
+    description:
+      "Beautifully designed portfolio displaying my skills.",
+    goal: "",
+    icons: {
+      1: "/icons/next.svg",
+      2: "/icons/typescript.png",
+      3: "/icons/",
+      4: "/icons/",
+      5: "/icons/",
+    },
+    images: {
+      1: {
+        title: "",
+        src: "",
+        description: "",
+      },
+      2: {
+        title: "",
+        src: "",
+        description: "",
+      },
+      3: {
+        title: "",
+        src: "",
+        description: "",
+      },
+      4: {
+        title: "",
+        src: "",
+        description: "",
+      },
+      5: {
+        title: "",
+        src: "",
+        description: "",
+      },
+      6: {
+        title: "",
+        src: "",
+        description: "",
+      },
+      7: {
+        title: "",
+        src: "",
+        description: "",
+      },
+      8: {
+        title: "",
+        src: "",
+        description: "",
+      },
+      9: {
+        title: "",
+        src: "",
+        description: "",
+      },
+      10: {
+        title: "",
+        src: "",
+        description: "",
+      },
+      11: {
+        title: "",
+        src: "",
+        description: "",
+      },
+      12: {
+        title: "",
+        src: "",
+        description: "",
+      },
+    },
+    skills: {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": "",
+    },
+    plans: {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+    },
+  },
+  
 ];
 
 export const navItems: NavItems[] = [
   { name: "About", link: "#about" },
   { name: "Hero", link: "#hero" },
   { name: "Projects", link: "#projects" },
+];
+
+export const certifications: Certifications[] = [
+  {
+    name: "Front-End Engineer",
+    company: "Codecademy",
+    src: "/certifications/frontend-engineer.png",
+    description: "Mastered front-end technologies: HTML, CSS, JavaScript, React; built responsive UIs, applied Git and UI/UX best practices.",
+    completed: true,
+  },
+  {
+    name: "Software Engineering Virtual Experience",
+    company: "J.P. Morgan",
+    src: "/certifications/software-engineering.png",
+    description: "Set up dev environment, fixed repository issues, and used JPMorgan's Perspective to create live data visualization for traders.",
+    completed: true,
+  },
+  {
+    name: "AWS Cloud Practitioner",
+    company: "AWS",
+    src: "/icons/placeholder.svg",
+    description: "Developing AWS cloud architecture skills: EC2, API Gateway, S3, Lambda.",
+    completed: false,
+  }
 ];

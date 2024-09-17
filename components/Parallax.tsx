@@ -7,43 +7,73 @@ export function Parallax() {
 }
 export const products = [
   {
-    title: "carapp",
-    link: "https://yamotors.ltd",
-    thumbnail: "/images/carapp4.png",
-  },
-  {
-    title: "carapp",
-    link: "https://yamotors.ltd",
-    thumbnail: "/images/carapp2.png",
-  },
-  {
-    title: "carapp",
-    link: "https://yamotors.ltd",
-    thumbnail: "/images/carapp1.png",
-  },
-  {
-    title: "carapp",
-    link: "https://yamotors.ltd",
-    thumbnail: "/images/carapp3.png",
-  },
-  {
-    title: "cryptoapp",
+    title: "",
     link: "",
-    thumbnail: "/images/cryptoapp1.png",
+    thumbnail: "/projects/carapp/code/fetch-code.png",
   },
   {
-    title: "cryptoapp",
+    title: "",
     link: "",
-    thumbnail: "/images/cryptoapp2.png",
+    thumbnail: "/projects/carapp/code/mongodb-schema-code.png",
   },
   {
-    title: "cryptoapp",
+    title: "",
     link: "",
-    thumbnail: "/images/cryptoapp3.png",
+    thumbnail: "/projects/carapp/code/mongodb-code.png",
   },
   {
-    title: "cryptoapp",
+    title: "",
     link: "",
-    thumbnail: "/images/cryptoapp4.png",
+    thumbnail: "/projects/carapp/code/react-email-code.png",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail: "/projects/carapp/code/car-sanity-schema-code.png",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail: "/projects/carapp/code/history-sanity-schema-code.png",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail: "/projects/carapp/code/car-query-code.png",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail: "/projects/carapp/code/dynamic-route-code.png",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail: "/projects/cryptoapp/code/auth-middleware-code.png",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail: "/projects/cryptoapp/code/conversion-code.png",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail: "/projects/cryptoapp/code/fetch-balance-code.png",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail: "/projects/cryptoapp/code/fetch-total-transactions-code.png",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail: "/projects/cryptoapp/code/lightweight-charts-code.png",
+  },
+  {
+    title: "",
+    link: "",
+    thumbnail: "/projects/cryptoapp/code/three-globe-code.png",
   },
 ];

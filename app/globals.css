@@ -100,10 +100,13 @@
     @apply text-lg text-slate-500;
   }
   p {
-    @apply text-base
+    @apply text-base;
   }
   .bg {
     @apply bg-gradient-to-r from-slate-900 to-slate-600;
+  }
+  .bg-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600;
   }
   .gradient {
     @apply bg-gradient-to-r from-cyan-500 to-green-500;

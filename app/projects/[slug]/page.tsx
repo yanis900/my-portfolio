@@ -51,9 +51,6 @@ export default function Page({
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
                 Project Goal 🎯
               </h2>
-              <h3 className="text-muted-foreground md:text-lg">
-                This is where I explain the purpose of the project:
-              </h3>
               <p className="grid gap-2 text-muted-foreground">{project.goal}</p>
               <Button>
                 <Link

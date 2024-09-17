@@ -96,6 +96,7 @@ export const StickyScroll = ({
               contentClassName
             )}
           >
+            <p className="tracking-tighter font-normal absolute top-0 right-0 text-gray-500 rounded-bl-lg bg-white p-1 border-l border-b"><span>zoom in</span> ⌞ ⌝</p>
             <img
               src={content[activeCard].src ?? null}
               alt={content[activeCard].title}
