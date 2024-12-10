@@ -1,9 +1,35 @@
 import React from "react";
-import { projects } from "@/app/contants";
 import BoxReveal from "./magicui/box-reveal";
 import { PinContainer } from "./acerternityui/3d-pin";
+import { client } from "@/sanity/lib/client";
 
-export default function Projects() {
+export type Project = {
+  name: string;
+  description: string;
+  thumbnail: string;
+  src: string;
+  slug: string;
+  images: string[];
+  icons: string[];
+};
+
+export type Projects = Project[];
+
+export const fetchProjects = async (): Promise<Projects> => {
+  const data = await client.fetch<Projects>(`*[_type == "projects"][0...5]{
+  name,
+  description,
+  "thumbnail": thumbnail.asset->url,
+  src,
+  "slug": slug.current,
+  "images": images[].asset->url,
+  "icons": icons[].asset->url,
+  }`);
+  return data;
+};
+
+export default async function Projects() {
+  const projects = await fetchProjects();
   return (
     <div id="projects" className="py-20 relative">
       <div className="w-full grid place-items-center">
@@ -28,9 +54,9 @@ export default function Projects() {
           >
             <PinContainer title={"View"} href={`/projects/${project.slug}`}>
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[25vh] mb-10">
-                <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg"></div>
+                <div className="relative w-full h-full overflow-hidden rounded-3xl bg"></div>
                 <img
-                  src={project.img}
+                  src={project.thumbnail}
                   alt="cover"
                   className="z-10 absolute -bottom-4 w-5/6 rounded-lg rotate-2"
                 />
@@ -44,7 +70,7 @@ export default function Projects() {
               <div className="flex items-center justify-between mt-7 mb-3">
                 <div className="flex items-center">
                   {project.icons &&
-                    Object.values(project.icons).map((icon, index) => (
+                    project.icons.map((icon, index) => (
                       <div
                         key={index}
                         className="border-white border-2 bg bg-slate-500 rounded-full lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center overflow-hidden"

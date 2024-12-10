@@ -71,7 +71,6 @@ export const PinPerspective = ({
         <div className="absolute top-0 inset-x-0  flex justify-center">
           <Link
             href={href}
-            target="_blank"
             className="relative gradient flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10"
             style={{ pointerEvents: "auto" }}
           >
