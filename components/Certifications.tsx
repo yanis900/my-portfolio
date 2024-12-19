@@ -1,7 +1,6 @@
 import React from "react";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 import { ZoomInIcon } from "lucide-react";
-import { Badge } from "./ui/badge";
 import BoxReveal from "./magicui/box-reveal";
 import { client } from "@/sanity/lib/client";
 
@@ -29,7 +28,6 @@ const fetchCertifications = async (): Promise<Certifications> => {
 
 export default async function Certifications() {
   const certifications = await fetchCertifications();
-  console.log(certifications)
   return (
     <main
       id="certifications"

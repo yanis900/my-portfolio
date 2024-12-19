@@ -1,4 +1,3 @@
-import React from "react";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Certifications from "@/components/Certifications";

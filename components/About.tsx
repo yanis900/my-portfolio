@@ -6,14 +6,8 @@ import { Button } from "./ui/button";
 import Header from "./Header";
 import { LinkPreview } from "./acerternityui/link-preview";
 import { BackgroundLines } from "./acerternityui/background-line";
-// import { toast } from "sonner";
 
 export default function About() {
-  // if (!localStorage.getItem('refresh'))
-  // window.onload = (e) => {
-  //   toast("Welcome To My Portfolio");
-  //   window.localStorage.setItem('refresh','1')
-  // };
   return (
     <div id="about" className="mesh" >
       <Header />
