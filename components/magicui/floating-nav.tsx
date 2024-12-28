@@ -61,7 +61,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "hidden sm:flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[100] top-6 inset-x-0 mx-auto px-6 py-2 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
+          "flex sm:flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[100] top-6 inset-x-0 mx-auto px-6 py-2 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
           className
         )}
         style={{
@@ -78,11 +78,10 @@ export const FloatingNav = ({
               className={cn("relative items-center flex space-x-1")}
             >
               <span className="block sm:hidden">{navItem.icon}</span>
-              <span className=" text-sm !cursor-pointer">{navItem.name}</span>
+              <span className="text-sm !cursor-pointer hidden sm:flex">{navItem.name}</span>
             </Link>
           </Button>
         ))}
-        {/* <ContactBtn /> */}
       </motion.div>
     </AnimatePresence>
   );

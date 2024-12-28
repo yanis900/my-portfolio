@@ -1,18 +1,19 @@
 "use client";
 import React from "react";
-import { Terminal } from "lucide-react";
 import { FloatingNav } from "./magicui/floating-nav";
 import ScrollBar from "./ScrollBar";
+import { Newspaper, PanelsTopLeft, SquareUser, Terminal } from "lucide-react";
 
-type NavItems = {
+export type NavItems = {
   name: string;
   link: string;
+  icon?: JSX.Element;
 };
 
 const navItems: NavItems[] = [
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Certifications", link: "#certifications" },
+  { name: "About", link: "#about", icon: <SquareUser />},
+  { name: "Projects", link: "#projects", icon: <PanelsTopLeft /> },
+  { name: "Certifications", link: "#certifications", icon: <Newspaper /> },
 ];
 
 export default function Header() {
@@ -22,7 +23,7 @@ export default function Header() {
       <ul>
         <Terminal />
       </ul>
-      <FloatingNav navItems={navItems}/>
+      <FloatingNav navItems={navItems} />
     </div>
   );
 }

@@ -1,10 +1,19 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+});
 
 export default function RootLayout({
   children,
@@ -13,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
+      >
         {children}
         <Script
           id="crisp-chat"
@@ -33,7 +44,7 @@ export default function RootLayout({
           }}
         />
         <Analytics />
-        <Toaster position="top-right"/>
+        <Toaster position="top-right" />
       </body>
     </html>
   );
