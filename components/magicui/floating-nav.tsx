@@ -77,7 +77,7 @@ export const FloatingNav = ({
               href={navItem.link}
               className={cn("relative items-center flex space-x-1")}
             >
-              <span className="block sm:hidden">{navItem.icon}</span>
+              <span className="flex">{navItem.icon}</span>
               <span className="text-sm !cursor-pointer hidden sm:flex">{navItem.name}</span>
             </Link>
           </Button>

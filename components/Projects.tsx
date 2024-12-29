@@ -46,14 +46,14 @@ export default async function Projects() {
         </BoxReveal>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-16">
         {projects.map((project, index) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={index}
           >
             <PinContainer title={"View"} href={`/projects/${project.slug}`}>
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[25vh] mb-10">
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[25vh]">
                 <div className="relative w-full h-full overflow-hidden rounded-3xl bg"></div>
                 <img
                   src={project.thumbnail}
@@ -62,12 +62,12 @@ export default async function Projects() {
                 />
               </div>
               <BoxReveal duration={0.5}>
-                <h2>{project.name}</h2>
+                <h2 className="text-2xl font-semibold tracking-tight">{project.name}</h2>
               </BoxReveal>
               <BoxReveal duration={0.5}>
                 <h3>{project.description}</h3>
               </BoxReveal>
-              <div className="flex items-center justify-between mt-7 mb-3">
+              <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   {project.icons &&
                     project.icons.map((icon, index) => (

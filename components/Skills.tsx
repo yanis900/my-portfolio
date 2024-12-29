@@ -1,81 +1,108 @@
+import { Code2, Info, Layers, Server, Share2 } from "lucide-react";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+import Safari from "./magicui/safari";
+import DotPattern from "./magicui/dot-pattern";
 import GridPattern from "./magicui/grid-pattern";
+import { MarqueeDemo } from "./magicui/marquee-demo";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-const bentoCardItems = [
+const features = [
   {
-    name: "Name",
-    description: "Description",
-    background: <img className="absolute -right-20 -top-20 opacity-60" />,
-    className: "lg:row-start-1 lg:row-end-3 lg:col-start-1 lg:col-end-4",
+    Icon: Layers,
+    name: "Tech Stack",
+    description: "A list of technologies I work with",
+    href: "#",
+    cta: "Learn more",
+    className: "col-span-3 lg:col-span-1",
+    background: <MarqueeDemo />,
   },
   {
-    name: "Name",
-    description: "Description",
-    background: "",
-    className: "lg:row-start-1 lg:row-end-2 lg:col-start-4 lg:col-end-6",
-  },
-  {
-    name: "Name",
-    description: "Description",
-    background: <img className="absolute -right-20 -top-20 opacity-60" />,
-    className: "lg:row-start-2 lg:row-end-3 lg:col-start-4 lg:col-end-6",
-  },
-  {
-    name: "Name",
-    description: "Description",
+    Icon: Code2,
+    name: "Full Stack Integration",
+    description: "Connecting frontend and backend seamlessly",
+    href: "#",
+    cta: "Learn more",
+    className: "col-span-3 lg:col-span-2",
     background: (
-      <>
-        {" "}
+      //   <Safari
+      //   className="absolute size-full p-5 bottom-10"
+      //   src={"/images/1.png"}
+      // />
+      <DotPattern
+        className={
+          "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+        }
+      />
+    ),
+  },
+  {
+    Icon: Share2,
+    name: "API Development",
+    description: "Building RESTful APIs with Hono.js",
+    href: "#",
+    cta: "Learn more",
+    className: "col-span-3 lg:col-span-2",
+    background: (
+      <div className="absolute h-[500px] w-full overflow-hidden">
         <GridPattern
           squares={[
             [4, 4],
             [5, 1],
             [8, 2],
-            [6, 6],
-            [10, 5],
-            [13, 3],
+            [5, 3],
+            [5, 5],
+            [10, 10],
+            [12, 15],
+            [15, 10],
+            [10, 15],
+            [15, 10],
+            [10, 15],
+            [15, 10],
           ]}
-          className={cn("inset-x-0 inset-y-[-30%] h-[200%] skew-y-12")}
-        />{" "}
-        <img
-          src="/code.png"
-          className="absolute -bottom-20 -right-40 opacity-90 rounded-lg"
-        />{" "}
-      </>
+          className={cn(
+            "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]",
+            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+          )}
+        />
+        <Image
+          src="/images/codeLight.png"
+          width={"800"}
+          height={"800"}
+          alt=""
+          className="absolute -right-60 top-10 border rounded-lg bg-white"
+        />
+      </div>
     ),
-    className: "lg:row-start-3 lg:row-end-5 lg:col-start-3 lg:col-end-6",
   },
   {
-    name: "Name",
-    description: "Description",
-    background: "",
-    className: "lg:row-start-3 lg:row-end-4 lg:col-start-1 lg:col-end-3",
-  },
-  {
-    name: "Name",
-    description: "Description",
-    background: <img className="absolute -right-20 -top-20 opacity-60" />,
-    className: "lg:row-start-4 lg:row-end-5 lg:col-start-1 lg:col-end-3",
-  },
-];
-
-export async function Skills() {
-  return (
-    <div id="skills" className="p-20 relative">
+    Icon: Server,
+    name: "Backend Development",
+    description: "Creating scalable server solutions with Node.js",
+    className: "col-span-3 lg:col-span-1",
+    href: "#",
+    cta: "Learn more",
+    background: (
       <GridPattern
         width={30}
         height={30}
         x={-1}
         y={-1}
         strokeDasharray={"4 2"}
-        className={cn(
-          "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]"
-        )}
+        className={
+          "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+        }
       />
-      <BentoGrid>
-        {bentoCardItems.map((items) => (
-          <BentoCard key={items.name} {...items} />
+    ),
+  },
+];
+
+export function Skills() {
+  return (
+    <div className="container p-10" id="skills">
+      <BentoGrid className="">
+        {features.map((feature, idx) => (
+          <BentoCard key={idx} {...feature} />
         ))}
       </BentoGrid>
     </div>

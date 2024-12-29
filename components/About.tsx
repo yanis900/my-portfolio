@@ -1,19 +1,23 @@
 "use client";
 
-import { Github, Linkedin } from "lucide-react";
+import { ChevronRight, Github, Linkedin } from "lucide-react";
 import BoxReveal from "./magicui/box-reveal";
 import { Button } from "./ui/button";
-import Header from "./Header";
 import { LinkPreview } from "./acerternityui/link-preview";
 import { BackgroundLines } from "./acerternityui/background-line";
+import Link from "next/link";
+import Featured from "./Featured";
+import { Separator } from "./ui/separator";
 
 export default function About() {
   return (
-    <div id="about" className="mesh" >
-      <Header />
+    <div id="about" className="mesh">
       <BackgroundLines className="relative w-screen h-screen z-10">
         <div className="h-[80vh] grid grid-cols-1 w-full place-items-center">
           <div className="flex flex-col gap-4 items-center justify-center">
+            <BoxReveal duration={0.5}>
+              <Featured />
+            </BoxReveal>
             <BoxReveal duration={0.5}>
               <h1 className="text-center">
                 <span className="bg-black text-white px-2">Full-Stack</span>{" "}
@@ -22,8 +26,8 @@ export default function About() {
             </BoxReveal>
             <BoxReveal duration={0.5}>
               <p className="text-muted-foreground text-center p-2">
-                Hi 👋 I am Yanis Aityounes, a Full-Stack Developer based in
-                London, United Kingdom 📍
+                Hi 👋 I am Yanis, a Full-Stack Developer based in London, United
+                Kingdom 📍
               </p>
             </BoxReveal>
             <BoxReveal duration={0.5}>
