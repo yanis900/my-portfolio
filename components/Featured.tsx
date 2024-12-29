@@ -11,7 +11,7 @@ export default function Featured() {
       ✨ <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
       <p className=" text-xs font-medium">
         <span className="font-semibold">Featured: </span>
-        "pleasereadme" README AI npm package{" "}
+        &quot;pleasereadme&quot; README AI npm package{" "}
       </p>
       <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
     </Link>
