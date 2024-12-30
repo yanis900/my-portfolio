@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
 import { cn } from "@/lib/utils";
-import { BorderBeam } from "../magicui/border-beam";
 import Link from "next/link";
+import { AppWindow } from "lucide-react";
+import { BorderBeam } from "../magicui/border-beam";
 
 export const PinContainer = ({
   children,
@@ -31,10 +31,14 @@ export const PinContainer = ({
   };
 
   return (
-    <div
-      className={cn("relative group/pin cursor-pointer", containerClassName)}
+    <Link
+      className={cn(
+        "relative group/pin z-50  cursor-pointer",
+        containerClassName
+      )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      href={href || "/"}
     >
       <div
         style={{
@@ -47,14 +51,14 @@ export const PinContainer = ({
           style={{
             transform: transform,
           }}
-          className="absolute left-1/2 p-4 top-1/2  flex justify-start items-start rounded-2xl transition duration-700 overflow-hidden border shadow-lg"
+          className="absolute left-1/2 p-4 top-1/2  flex justify-start items-start  rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.2)] border group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden"
         >
           <BorderBeam />
           <div className={cn(" relative z-50 ", className)}>{children}</div>
         </div>
       </div>
       <PinPerspective title={title} href={href} />
-    </div>
+    </Link>
   );
 };
 
@@ -63,22 +67,23 @@ export const PinPerspective = ({
   href,
 }: {
   title?: string;
-  href?: any;
+  href?: string;
 }) => {
   return (
-    <motion.div className="pointer-events-none w-full h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
+    <motion.div className="pointer-events-none  w-96 h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
       <div className=" w-full h-full -mt-7 flex-none  inset-0">
         <div className="absolute top-0 inset-x-0  flex justify-center">
-          <Link
+          <a
             href={href}
-            className="relative gradient flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10"
-            style={{ pointerEvents: "auto" }}
+            target={"_blank"}
+            className="relative flex space-x-2 items-center z-10 rounded-full py-0.5 px-4 gradient"
           >
-            <span className="relative z-20 gradient text-white text-s font-bold inline-block p-1.5">
-              {title}
+            <span className="relative z-20 text-sm font-bold flex gap-2 items-center justify-center py-0.5 text-white">
+              {title} <AppWindow />
             </span>
+
             <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover/btn:opacity-40"></span>
-          </Link>
+          </a>
         </div>
 
         <div
@@ -107,7 +112,7 @@ export const PinPerspective = ({
                 repeat: Infinity,
                 delay: 0,
               }}
-              className="absolute left-1/2 top-1/2  h-[11.25rem] w-[11.25rem] rounded-[50%] bg-sky-500/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
+              className="absolute left-1/2 top-1/2  h-[11.25rem] w-[11.25rem] rounded-[50%] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
             ></motion.div>
             <motion.div
               initial={{
@@ -127,7 +132,7 @@ export const PinPerspective = ({
                 repeat: Infinity,
                 delay: 2,
               }}
-              className="absolute left-1/2 top-1/2  h-[11.25rem] w-[11.25rem] rounded-[50%] bg-sky-500/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
+              className="absolute left-1/2 top-1/2  h-[11.25rem] w-[11.25rem] rounded-[50%] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
             ></motion.div>
             <motion.div
               initial={{
@@ -147,7 +152,7 @@ export const PinPerspective = ({
                 repeat: Infinity,
                 delay: 4,
               }}
-              className="absolute left-1/2 top-1/2  h-[11.25rem] w-[11.25rem] rounded-[50%] bg-sky-500/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
+              className="absolute left-1/2 top-1/2  h-[11.25rem] w-[11.25rem] rounded-[50%] shadow-[0_8px_16px_rgb(0_0_0/0.4)]"
             ></motion.div>
           </>
         </div>

@@ -2,6 +2,7 @@ import React from "react";
 import BoxReveal from "./magicui/box-reveal";
 import { PinContainer } from "./acerternityui/3d-pin";
 import { client } from "@/sanity/lib/client";
+import DotPattern from "./magicui/dot-pattern";
 
 export type Project = {
   name: string;
@@ -46,7 +47,7 @@ export default async function Projects() {
         </BoxReveal>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16">
+      <div className="flex flex-wrap items-center justify-center sm:gap-16 gap-0">
         {projects.map((project, index) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
@@ -62,12 +63,14 @@ export default async function Projects() {
                 />
               </div>
               <BoxReveal duration={0.5}>
-                <h2 className="text-2xl font-semibold tracking-tight">{project.name}</h2>
+                <h2 className="text-2xl font-semibold tracking-tight pt-2">
+                  {project.name}
+                </h2>
               </BoxReveal>
               <BoxReveal duration={0.5}>
                 <h3>{project.description}</h3>
               </BoxReveal>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between py-2">
                 <div className="flex items-center">
                   {project.icons &&
                     project.icons.map((icon, index) => (

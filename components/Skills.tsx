@@ -6,6 +6,7 @@ import GridPattern from "./magicui/grid-pattern";
 import { MarqueeDemo } from "./magicui/marquee-demo";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { CardStackDemo } from "./acerternityui/card-stack-demo";
 
 const features = [
   {
@@ -29,11 +30,13 @@ const features = [
       //   className="absolute size-full p-5 bottom-10"
       //   src={"/images/1.png"}
       // />
-      <DotPattern
-        className={
-          "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
-        }
-      />
+      <div>
+        <DotPattern
+          className={
+            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+          }
+        />
+      </div>
     ),
   },
   {
@@ -83,23 +86,26 @@ const features = [
     href: "#",
     cta: "Learn more",
     background: (
-      <GridPattern
-        width={30}
-        height={30}
-        x={-1}
-        y={-1}
-        strokeDasharray={"4 2"}
-        className={
-          "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
-        }
-      />
+      <div>
+        <GridPattern
+          width={30}
+          height={30}
+          x={-1}
+          y={-1}
+          strokeDasharray={"4 2"}
+          className={
+            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+          }
+        />
+        <CardStackDemo />
+      </div>
     ),
   },
 ];
 
 export function Skills() {
   return (
-    <div className="container p-10" id="skills">
+    <div className="container p-5 gradient rounded-xl" id="skills">
       <BentoGrid className="">
         {features.map((feature, idx) => (
           <BentoCard key={idx} {...feature} />
