@@ -33,36 +33,32 @@ export const Highlight = ({
 const CARDS = [
   {
     id: 0,
-    name: "Manu Arora",
-    designation: "Senior Software Engineer",
+    name: "John Doe",
+    designation: "CTO, TechCorp",
     content: (
       <p>
-        These cards are amazing, <Highlight>I want to use them</Highlight> in my
-        project. Framer motion is a godsend ngl tbh fam 🙏
+        <Highlight>Beautifully designed, optimized components. Outstanding performance!</Highlight>
       </p>
     ),
   },
   {
     id: 1,
-    name: "Elon Musk",
-    designation: "Senior Shitposter",
+    name: "Jane Smith",
+    designation: "Product Manager, Innovate Inc.",
     content: (
       <p>
-        I dont like this Twitter thing,{" "}
-        <Highlight>deleting it right away</Highlight> because yolo.
+        <Highlight>Exceeded expectations. Seamless launch boosted engagement.</Highlight>
       </p>
     ),
   },
   {
     id: 2,
-    name: "Tyler Durden",
-    designation: "Manager Project Mayhem",
+    name: "Michael Brown",
+    designation: "Lead Developer, Creative Solutions",
     content: (
       <p>
-        The first rule of
-        <Highlight>Fight Club</Highlight> is that you do not talk about fight
-        club.x
+        <Highlight>Top-notch architecture. Phenomenal efficiency gains.</Highlight>
       </p>
     ),
   },
-];
+]
