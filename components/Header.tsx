@@ -49,9 +49,8 @@ export default function Header() {
         <Terminal />
       </ul>
       <FloatingNav navItems={navItems} />
-      <Link href={'https://api.yanait.com/'} className="flex gap-2 font-bold z-[1000]">
+      <Link href={'https://api.yanait.com/'} className="z-[1000]">
         <Share2 />
-        API
       </Link>
     </div>
   );
