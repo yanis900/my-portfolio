@@ -8,11 +8,16 @@ import { Card } from "./ui/card";
 
 export type Project = {
   name: string;
+  date: string;
   description: string;
+  tags: string[];
   thumbnail: string;
   src: string;
   slug: string;
   images: string[];
+  role: string;
+  for: string;
+  type: string;
   icons: string[];
 };
 
@@ -21,11 +26,16 @@ export type Projects = Project[];
 export const fetchProjects = async (): Promise<Projects> => {
   const data = await client.fetch<Projects>(`*[_type == "projects"][0...5]{
   name,
+  date,
   description,
+  "tags": tags[],
   "thumbnail": thumbnail.asset->url,
   src,
   "slug": slug.current,
   "images": images[].asset->url,
+  role,
+  for,
+  type,
   "icons": icons[].asset->url,
   }`);
   return data;

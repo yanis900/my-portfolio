@@ -1,13 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { fetchProjects, Project, Projects } from "@/components/Projects";
-import { ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import Header from "@/components/Header";
 import DotPattern from "@/components/magicui/dot-pattern";
-
-const tags = ["NEXTJS", "TYPESCRIPT", "REACT", "VUE", "SVELTE"];
 
 export default async function Page({
   params,
@@ -30,10 +25,10 @@ export default async function Page({
     return (
       <div className="container mx-auto px-4 py-8 flex items-center justify-center min-h-screen">
         <DotPattern
-                className={
-                  "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]"
-                }
-              />
+          className={
+            "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]"
+          }
+        />
         <Card className="w-full max-w-md z-10">
           <CardHeader>
             <CardTitle className="text-2xl font-bold text-center">
@@ -55,12 +50,12 @@ export default async function Page({
     <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <div className="space-y-8">
         <div>
-          <span className="text-muted-foreground">2021 - PRESENT</span>
+          <span className="text-muted-foreground">{project.date}</span>
           <h1 className="text-3xl font-bold mt-2">{project.name}</h1>
           <p className="text-xl text-muted-foreground mt-1">Open Source</p>
           <div className="flex flex-wrap gap-2 mt-3">
-            {tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
+            {project.tags.map((tag, index) => (
+              <Badge key={index} variant="secondary">
                 {tag}
               </Badge>
             ))}
@@ -80,22 +75,17 @@ export default async function Page({
               />
             </div>
             <p className="text-muted-foreground">
-              {project.description} Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Maiores blanditiis corporis tempore iusto
-              incidunt earum pariatur! Pariatur dolores nemo rerum tempore
-              ratione possimus porro in quo debitis! Alias, commodi expedita.
-            </p>
-            <p className="text-muted-foreground mb-2">
-              {project.description} Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Maiores blanditiis corporis tempore iusto
-              incidunt earum pariatur! Pariatur dolores nemo rerum tempore
-              ratione possimus porro in quo debitis! Alias, commodi expedita.
-            </p>
-            <p className="text-muted-foreground mb-2">
-              {project.description} Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Maiores blanditiis corporis tempore iusto
-              incidunt earum pariatur! Pariatur dolores nemo rerum tempore
-              ratione possimus porro in quo debitis! Alias, commodi expedita.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit
+              aspernatur inventore, blanditiis, dicta atque id facilis ad
+              corporis suscipit magni quasi illum nulla iusto? Impedit itaque
+              cum est ad vitae. Vitae quisquam excepturi sequi voluptatibus
+              voluptatem voluptate obcaecati ullam accusantium at. Rerum
+              perspiciatis minima nam molestias soluta quo odit. Rem, non
+              ratione? Quasi distinctio quod quo rem repudiandae maxime et. Amet
+              facere id perspiciatis, voluptates exercitationem ipsa inventore
+              quas ut quia libero deserunt voluptatibus doloribus sapiente
+              beatae odit delectus, sint commodi reiciendis maxime consectetur?
+              Optio, vero! Pariatur placeat magnam nisi?
             </p>
           </div>
           {/* /* -------------------------------------------------------------------------- */
@@ -116,27 +106,12 @@ export default async function Page({
                   project.images.map((image, index) => (
                     <Image
                       key={index}
-                      src={image}
-                      alt={`Project slide ${index + 1}`}
+                      src={image[0]}
+                      alt={`image ${index + 1}`}
                       fill
                       className="object-cover rounded-lg"
                     />
                   ))}
-                {/* <Button
-                  size="icon"
-                  variant="secondary"
-                  className="absolute top-4 right-4"
-                >
-                  <Maximize2 className="h-4 w-4" />
-                </Button> */}
-                {/* <div className="absolute flex justify-center gap-2 bottom-0 right-72">
-                  <Button size="icon" variant="outline">
-                    <ChevronLeft className="h-4 w-4" />
-                  </Button>
-                  <Button size="icon" variant="outline">
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
-                </div> */}
               </div>
             </div>
           </div>
@@ -151,19 +126,19 @@ export default async function Page({
           <Card className="p-6 bg-secondary">
             <dl className="grid grid-cols-1 gap-4">
               <div>
-                <dt className="font-medium">My role</dt>
+                <dt className="font-medium">My Role</dt>
                 <dd className="text-muted-foreground">
-                  Maintainer, Engineering software packages
+                  {project.role || "Developer"}
                 </dd>
               </div>
               <div>
                 <dt className="font-medium">Developed for/at</dt>
-                <dd className="text-muted-foreground">Personal project</dd>
+                <dd className="text-muted-foreground">{project.for}</dd>
               </div>
               <div>
                 <dt className="font-medium">Application type</dt>
                 <dd className="text-muted-foreground">
-                  Icon Library, Open Source
+                  {project.type || "Web Application"}
                 </dd>
               </div>
             </dl>
@@ -189,7 +164,6 @@ export default async function Page({
             </div>
           </Card>
         </div>
-
         {/* <div className="mx-auto max-w-3xl">
           <h1 className="text-3xl font-bold mb-8 text-center">Next Project</h1>
           <Card className="p-6 bg-secondary"></Card>

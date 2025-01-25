@@ -11,9 +11,20 @@ const projects: SchemaTypeDefinition = {
       title: "Name",
     },
     {
+      name: "date",
+      type: "string",
+      title: "Date",
+    },
+    {
       name: "description",
       type: "string",
       title: "Description",
+    },
+    {
+      name: "tags",
+      type: "array",
+      title: "Tags",
+      of: [{ type: "string" }],
     },
     {
       name: "thumbnail",
