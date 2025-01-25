@@ -41,6 +41,21 @@ const projects: SchemaTypeDefinition = {
       of: [{ type: "image" }],
     },
     {
+      name: "role",
+      type: "string",
+      title: "Role",
+    },
+    {
+      name: "for",
+      type: "string",
+      title: "For",
+    },
+    {
+      name: "type",
+      type: "string",
+      title: "Type",
+    },
+    {
       name: "icons",
       type: "array",
       title: "Icons",
