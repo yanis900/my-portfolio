@@ -59,14 +59,14 @@ export default async function Projects() {
         </BoxReveal>
       </div>
 
-      <div className="mx-auto max-w-6xl space-y-8 px-4 py-12 flex flex-wrap justify-center items-center gap-[5rem]">
+      <div className="mx-auto max-w-6xl space-y-8 px-4 py-12 flex flex-wrap justify-center items-center gap-x-[16rem] gap-y-[8rem]">
         {projects.map((project, index) => (
           <PinContainer
             title={"View"}
             href={`/projects/${project.slug}`}
             key={index}
           >
-            <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[25vh]">
+            <div className="relative flex items-center justify-center sm:w-[32rem] w-[80vw] overflow-hidden h-[20vh] lg:h-[25vh]">
               <div className="relative w-full h-full overflow-hidden rounded-3xl bg"></div>
               <img
                 src={project.thumbnail}

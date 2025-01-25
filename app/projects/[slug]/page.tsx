@@ -54,11 +54,12 @@ export default async function Page({
           <h1 className="text-3xl font-bold mt-2">{project.name}</h1>
           <p className="text-xl text-muted-foreground mt-1">Open Source</p>
           <div className="flex flex-wrap gap-2 mt-3">
-            {project.tags && project.tags.map((tag, index) => (
-              <Badge key={index} variant="secondary">
-                {tag}
-              </Badge>
-            ))}
+            {project.tags &&
+              project.tags.map((tag, index) => (
+                <Badge key={index} variant="secondary">
+                  {tag}
+                </Badge>
+              ))}
           </div>
         </div>
         {/* /* -------------------------------------------------------------------------- */
