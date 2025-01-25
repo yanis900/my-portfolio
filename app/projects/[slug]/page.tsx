@@ -54,7 +54,7 @@ export default async function Page({
           <h1 className="text-3xl font-bold mt-2">{project.name}</h1>
           <p className="text-xl text-muted-foreground mt-1">Open Source</p>
           <div className="flex flex-wrap gap-2 mt-3">
-            {project.tags.map((tag, index) => (
+            {project.tags && project.tags.map((tag, index) => (
               <Badge key={index} variant="secondary">
                 {tag}
               </Badge>
@@ -70,7 +70,7 @@ export default async function Page({
               <Image
                 src={"/images/brush.jpg"}
                 alt="Project cover"
-                layout="fill"
+                fill
                 className="rounded-lg opacity-5"
               />
             </div>
@@ -106,7 +106,7 @@ export default async function Page({
                   project.images.map((image, index) => (
                     <Image
                       key={index}
-                      src={image[0]}
+                      src={image}
                       alt={`image ${index + 1}`}
                       fill
                       className="object-cover rounded-lg"
@@ -133,7 +133,7 @@ export default async function Page({
               </div>
               <div>
                 <dt className="font-medium">Developed for/at</dt>
-                <dd className="text-muted-foreground">{project.for}</dd>
+                <dd className="text-muted-foreground">{project.who}</dd>
               </div>
               <div>
                 <dt className="font-medium">Application type</dt>

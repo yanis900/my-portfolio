@@ -16,7 +16,7 @@ export type Project = {
   slug: string;
   images: string[];
   role: string;
-  for: string;
+  who: string;
   type: string;
   icons: string[];
 };
@@ -34,7 +34,7 @@ export const fetchProjects = async (): Promise<Projects> => {
   "slug": slug.current,
   "images": images[].asset->url,
   role,
-  for,
+  who,
   type,
   "icons": icons[].asset->url,
   }`);

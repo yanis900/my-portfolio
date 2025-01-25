@@ -57,9 +57,9 @@ const projects: SchemaTypeDefinition = {
       title: "Role",
     },
     {
-      name: "for",
+      name: "who",
       type: "string",
-      title: "For",
+      title: "Who",
     },
     {
       name: "type",
