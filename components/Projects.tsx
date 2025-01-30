@@ -44,7 +44,7 @@ export const fetchProjects = async (): Promise<Projects> => {
 export default async function Projects() {
   const projects = await fetchProjects();
   return (
-    <div id="projects" className="py-20 relative">
+    <div id="projects" className="py-20 space-y-10 relative">
       <div className="w-full grid place-items-center code">
         <BoxReveal duration={0.5}>
           <h1>
@@ -59,7 +59,7 @@ export default async function Projects() {
         </BoxReveal>
       </div>
 
-      <div className="mx-auto max-w-6xl space-y-8 px-4 py-12 flex flex-wrap justify-center items-center gap-x-[16rem] gap-y-[8rem]">
+      <div className="mx-auto max-w-6xl flex flex-wrap justify-center items-center gap-x-[16rem] gap-y-[8rem]">
         {projects.map((project, index) => (
           <PinContainer
             title={"View"}
