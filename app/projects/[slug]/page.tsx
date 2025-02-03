@@ -1,24 +1,62 @@
+"use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { fetchProjects, Project, Projects } from "@/components/Projects";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import DotPattern from "@/components/magicui/dot-pattern";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { SlideShow } from "@/components/SlideShow";
+import { useEffect, useRef, useState } from "react";
+import FullScreenSlideShow from "@/components/FullScreenSlideShow";
 
-export default async function Page({
+export default function Page({
   params,
 }: {
   params: {
     slug: string;
   };
 }) {
-  let data: Projects;
-  let project: Project | undefined;
+  const [data, setData] = useState<Projects>([]);
+  const [project, setProject] = useState<Project | undefined>(undefined);
+  const previousRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
 
-  try {
-    data = await fetchProjects();
-    project = data.find((project) => project.slug === params.slug);
-  } catch (error) {
-    console.error(error);
+  useEffect(() => {
+    async function getProjects() {
+      try {
+        const projects = await fetchProjects();
+        setData(projects);
+        setProject(projects.find((p) => p.slug === params.slug));
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getProjects();
+  }, [params.slug]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft" && previousRef.current) {
+        previousRef.current.click();
+      } else if (e.key === "ArrowRight" && nextRef.current) {
+        nextRef.current.click();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  function getNextProjectSlug(slug: string) {
+    const projectIndex = data.findIndex((p) => p.slug === slug);
+    if (projectIndex === -1 || projectIndex === data.length - 1) {
+      return data[0]?.slug || "";
+    }
+    return data[projectIndex + 1].slug;
   }
 
   if (!project) {
@@ -49,17 +87,29 @@ export default async function Page({
   return (
     <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <div className="space-y-8">
-        <div>
-          <span className="text-muted-foreground">{project.date}</span>
-          <h1 className="text-3xl font-bold mt-2">{project.name}</h1>
-          <p className="text-xl text-muted-foreground mt-1">Open Source</p>
-          <div className="flex flex-wrap gap-2 mt-3">
-            {project.tags &&
-              project.tags.map((tag, index) => (
-                <Badge key={index} variant="secondary">
-                  {tag}
-                </Badge>
-              ))}
+        <div className="flex justify-between">
+          <div>
+            <span className="text-muted-foreground">{project.date}</span>
+            <h1 className="text-3xl font-bold mt-2">{project.name}</h1>
+            <p className="text-xl text-muted-foreground mt-1">Open Source</p>
+            <div className="flex flex-wrap gap-2 mt-3">
+              {project.tags &&
+                project.tags.map((tag, index) => (
+                  <Badge key={index} variant="secondary">
+                    {tag}
+                  </Badge>
+                ))}
+            </div>
+          </div>
+          <div className="p-2">
+            <Button variant={"ghost"}>
+              <Link
+                href={`/projects/${getNextProjectSlug(project.slug)}`}
+                className="flex items-center justify-center gap-2"
+              >
+                Next Project <ArrowRight />
+              </Link>
+            </Button>
           </div>
         </div>
         {/* /* -------------------------------------------------------------------------- */
@@ -76,18 +126,19 @@ export default async function Page({
               />
             </div>
             <p className="text-muted-foreground">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit
-              aspernatur inventore, blanditiis, dicta atque id facilis ad
-              corporis suscipit magni quasi illum nulla iusto? Impedit itaque
-              cum est ad vitae. Vitae quisquam excepturi sequi voluptatibus
-              voluptatem voluptate obcaecati ullam accusantium at. Rerum
-              perspiciatis minima nam molestias soluta quo odit. Rem, non
-              ratione? Quasi distinctio quod quo rem repudiandae maxime et. Amet
-              facere id perspiciatis, voluptates exercitationem ipsa inventore
-              quas ut quia libero deserunt voluptatibus doloribus sapiente
-              beatae odit delectus, sint commodi reiciendis maxime consectetur?
-              Optio, vero! Pariatur placeat magnam nisi?
+              {project.content
+                ? project.content
+                : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsam maxime magnam facere numquam cupiditate unde architecto magni excepturi temporibus vitae aspernatur, natus enim, deleniti, labore dolorum est voluptate ratione!"}
             </p>
+            <Button variant={"ghost"}>
+              <Link
+                href={"/"}
+                className="flex items-center justify-center gap-2"
+              >
+                <ArrowLeft />
+                Back
+              </Link>
+            </Button>
           </div>
           {/* /* -------------------------------------------------------------------------- */
           /*                                  Slideshow                                 */
@@ -95,6 +146,7 @@ export default async function Page({
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-green-500 rounded-lg opacity-50 blur-3xl" />
             <div className="relative bg-white/80 backdrop-blur-sm rounded-lg border shadow-2xl">
+              <FullScreenSlideShow images={project.images} />
               <div className="flex items-center gap-2 border-b p-2">
                 <div className="flex gap-1.5">
                   <div className="h-3 w-3 rounded-full bg-red-500" />
@@ -103,16 +155,11 @@ export default async function Page({
                 </div>
               </div>
               <div className="relative w-full aspect-video">
-                {project.images &&
-                  project.images.map((image, index) => (
-                    <Image
-                      key={index}
-                      src={image}
-                      alt={`image ${index + 1}`}
-                      fill
-                      className="object-cover rounded-lg"
-                    />
-                  ))}
+                <SlideShow
+                  image={project.images}
+                  previousRef={previousRef}
+                  nextRef={nextRef}
+                />
               </div>
             </div>
           </div>

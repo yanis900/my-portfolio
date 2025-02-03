@@ -10,6 +10,7 @@ export type Project = {
   name: string;
   date: string;
   description: string;
+  content: string;
   tags: string[];
   thumbnail: string;
   src: string;
@@ -28,6 +29,7 @@ export const fetchProjects = async (): Promise<Projects> => {
   name,
   date,
   description,
+  content,
   "tags": tags[],
   "thumbnail": thumbnail.asset->url,
   src,

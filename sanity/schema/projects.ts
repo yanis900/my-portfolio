@@ -21,6 +21,11 @@ const projects: SchemaTypeDefinition = {
       title: "Description",
     },
     {
+      name: "content",
+      type: "string",
+      title: "Content",
+    },
+    {
       name: "tags",
       type: "array",
       title: "Tags",
