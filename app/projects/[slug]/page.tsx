@@ -1,4 +1,3 @@
-"use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { fetchProjects, Project, Projects } from "@/components/Projects";
 import Image from "next/image";
@@ -8,48 +7,23 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { SlideShow } from "@/components/SlideShow";
-import { useEffect, useRef, useState } from "react";
 import FullScreenSlideShow from "@/components/FullScreenSlideShow";
 
-export default function Page({
+export default async function Page({
   params,
 }: {
   params: {
     slug: string;
   };
 }) {
-  const [data, setData] = useState<Projects>([]);
-  const [project, setProject] = useState<Project | undefined>(undefined);
-  const previousRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    async function getProjects() {
-      try {
-        const projects = await fetchProjects();
-        setData(projects);
-        setProject(projects.find((p) => p.slug === params.slug));
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    getProjects();
-  }, [params.slug]);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft" && previousRef.current) {
-        previousRef.current.click();
-      } else if (e.key === "ArrowRight" && nextRef.current) {
-        nextRef.current.click();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+  let data: Projects;
+  let project: Project | undefined;
+  try {
+    data = await fetchProjects();
+    project = data.find((project) => project.slug === params.slug);
+  } catch (error) {
+    console.error(error);
+  }
 
   function getNextProjectSlug(slug: string) {
     const projectIndex = data.findIndex((p) => p.slug === slug);
@@ -84,6 +58,13 @@ export default function Page({
     );
   }
 
+//   const response = await fetch("/api/send", {
+//     method: "POST",
+//     body: JSON.stringify(process.env.SANITY_REVALIDATE_SECRET),
+//     headers: { "Content-Type": "application/json" },
+//   });
+// revalidateTag(body._type)
+
   return (
     <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <div className="space-y-8">
@@ -102,6 +83,7 @@ export default function Page({
             </div>
           </div>
           <div className="p-2">
+            {/* {dev && <Button onClick={response}></Button>} */}
             <Button variant={"ghost"}>
               <Link
                 href={`/projects/${getNextProjectSlug(project.slug)}`}
@@ -155,11 +137,7 @@ export default function Page({
                 </div>
               </div>
               <div className="relative w-full aspect-video">
-                <SlideShow
-                  image={project.images}
-                  previousRef={previousRef}
-                  nextRef={nextRef}
-                />
+                <SlideShow image={project.images} />
               </div>
             </div>
           </div>

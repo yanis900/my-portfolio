@@ -1,4 +1,4 @@
-import * as React from "react";
+"use client";
 
 import {
   Carousel,
@@ -8,16 +8,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { useRef } from "react";
 
-export function SlideShow({
-  image,
-  previousRef,
-  nextRef,
-}: {
-  image: string[];
-  previousRef: any;
-  nextRef: any;
-}) {
+export function SlideShow({ image }: { image: string[] }) {
+  const previousRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+
+  console.log(image)
   return (
     <Carousel>
       <CarouselContent>
@@ -25,7 +22,7 @@ export function SlideShow({
           <CarouselItem key={index}>
             <Image
               alt="Image"
-              className="object-cover"
+              className="object-cover aspect-video"
               height={800}
               src={image[index]}
               width={800}
