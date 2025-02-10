@@ -25,28 +25,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
       >
+        {children}
+        {/* <Script
+          id="crisp-chat"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.$crisp=[];
+            window.CRISP_WEBSITE_ID="fd195552-c6fd-45de-b52b-be03efbc4236";
+            (function(){
+              d=document;
+              s=d.createElement("script");
+              s.src="https://client.crisp.chat/l.js";
+              s.async=1;
+              d.getElementsByTagName("head")[0].appendChild(s);
+            })();
+          `,
+          }}
+        /> */}
         <Analytics />
         <Toaster position="top-right" />
       </body>
     </html>
   );
 }
-
-// {children}
-// <Script
-//   id="crisp-chat"
-//   strategy="afterInteractive"
-//   dangerouslySetInnerHTML={{
-//     __html: `
-//     window.$crisp=[];
-//     window.CRISP_WEBSITE_ID="fd195552-c6fd-45de-b52b-be03efbc4236";
-//     (function(){
-//       d=document;
-//       s=d.createElement("script");
-//       s.src="https://client.crisp.chat/l.js";
-//       s.async=1;
-//       d.getElementsByTagName("head")[0].appendChild(s);
-//     })();
-//   `,
-//   }}
-// />
