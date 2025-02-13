@@ -6,6 +6,11 @@ import Header from "@/components/Header";
 import { Skills } from "@/components/Skills";
 
 export default function Home() {
+  console.log(
+    "SANITY_REVALIDATE_SECRET:",
+    process.env.SANITY_REVALIDATE_SECRET ? "Exists" : "Missing"
+  );
+
   return (
     <>
       <Header />
