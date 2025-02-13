@@ -1,13 +1,11 @@
 "use client";
 
-import { ChevronRight, Github, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import BoxReveal from "./magicui/box-reveal";
 import { Button } from "./ui/button";
 import { LinkPreview } from "./acerternityui/link-preview";
 import { BackgroundLines } from "./acerternityui/background-line";
-import Link from "next/link";
 import Featured from "./Featured";
-import { Separator } from "./ui/separator";
 
 export default function About() {
   return (
