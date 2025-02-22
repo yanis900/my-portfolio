@@ -41,12 +41,12 @@ export default function FullScreenSlideShow( { images }: { images: string[] } ) 
               <CarouselContent className="-ml-4">
                 {images.map((src, index) => (
                   <CarouselItem key={index} className="pl-4 basis-1/2">
-                    <div className="relative aspect-video w-full">
+                    <div className="relative aspect-video w-full rounded-lg border bg-white">
                       <Image
                         src={src || "/placeholder.svg"}
                         alt={`Slide ${index + 1}`}
                         fill
-                        className="object-cover rounded-lg"
+                        className="object-contain"
                         priority
                       />
                     </div>

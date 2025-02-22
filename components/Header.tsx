@@ -24,11 +24,11 @@ const navItems: NavItems[] = [
     link: "#about",
     icon: <SquareUser className="sm:w-4 sm:h-4 w-6 h-6" />,
   },
-  {
-    name: "Skills",
-    link: "#skills",
-    icon: <Settings className="sm:w-4 sm:h-4 w-6 h-6" />,
-  },
+  // {
+  //   name: "Skills",
+  //   link: "#skills",
+  //   icon: <Settings className="sm:w-4 sm:h-4 w-6 h-6" />,
+  // },
   {
     name: "Projects",
     link: "#projects",

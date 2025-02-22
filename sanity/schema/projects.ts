@@ -22,7 +22,7 @@ const projects: SchemaTypeDefinition = {
     },
     {
       name: "content",
-      type: "string",
+      type: "text",
       title: "Content",
     },
     {

@@ -32,6 +32,7 @@ export default async function Certifications() {
   const certifications = await fetchCertifications();
   return (
     <main id="certifications" className="py-20 inverted-mesh relative">
+      
       <div className="w-full grid place-items-center">
         <BoxReveal duration={0.5}>
           <h1>

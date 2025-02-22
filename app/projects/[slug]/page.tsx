@@ -58,13 +58,6 @@ export default async function Page({
     );
   }
 
-//   const response = await fetch("/api/send", {
-//     method: "POST",
-//     body: JSON.stringify(process.env.SANITY_REVALIDATE_SECRET),
-//     headers: { "Content-Type": "application/json" },
-//   });
-// revalidateTag(body._type)
-
   return (
     <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <div className="space-y-8">
@@ -72,7 +65,7 @@ export default async function Page({
           <div>
             <span className="text-muted-foreground">{project.date}</span>
             <h1 className="text-3xl font-bold mt-2">{project.name}</h1>
-            <p className="text-xl text-muted-foreground mt-1">Open Source</p>
+            {/* <p className="text-xl text-muted-foreground mt-1">Open Source</p> */}
             <div className="flex flex-wrap gap-2 mt-3">
               {project.tags &&
                 project.tags.map((tag, index) => (
@@ -112,7 +105,7 @@ export default async function Page({
                 ? project.content
                 : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsam maxime magnam facere numquam cupiditate unde architecto magni excepturi temporibus vitae aspernatur, natus enim, deleniti, labore dolorum est voluptate ratione!"}
             </p>
-            <Button variant={"ghost"}>
+            <Button variant={"ghost"} className="mt-4">
               <Link
                 href={"/"}
                 className="flex items-center justify-center gap-2"

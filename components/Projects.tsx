@@ -46,7 +46,8 @@ export const fetchProjects = async (): Promise<Projects> => {
 export default async function Projects() {
   const projects = await fetchProjects();
   return (
-    <div id="projects" className="py-20 space-y-10 relative">
+    <div id="projects" className="py-20 space-y-16 relative">
+
       <div className="w-full grid place-items-center code">
         <BoxReveal duration={0.5}>
           <h1>

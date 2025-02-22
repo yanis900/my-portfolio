@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { LinkPreview } from "./acerternityui/link-preview";
 import { BackgroundLines } from "./acerternityui/background-line";
 import Featured from "./Featured";
+import { Badge } from "./ui/badge";
 
 export default function About() {
   return (
@@ -13,9 +14,9 @@ export default function About() {
       <BackgroundLines className="relative w-screen h-screen z-10">
         <div className="h-[80vh] grid grid-cols-1 w-full place-items-center">
           <div className="flex flex-col gap-4 items-center justify-center">
-            <BoxReveal duration={0.5}>
+            {/* <BoxReveal duration={0.5}>
               <Featured />
-            </BoxReveal>
+            </BoxReveal> */}
             <BoxReveal duration={0.5}>
               <h1 className="text-center">
                 <span className="bg-black text-white px-2">Full-Stack</span>{" "}
@@ -23,9 +24,10 @@ export default function About() {
               </h1>
             </BoxReveal>
             <BoxReveal duration={0.5}>
-              <p className="text-muted-foreground text-center p-2">
+              <p className="text-muted-foreground text-center p-2 space-y-3">
                 Hi 👋 I am Yanis, a Full-Stack Developer based in London, United
-                Kingdom 📍
+                Kingdom 📍. <br />
+                <Badge variant={'secondary'}>NextJS | ReactJS | Typescript</Badge>
               </p>
             </BoxReveal>
             <BoxReveal duration={0.5}>
