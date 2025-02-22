@@ -5,6 +5,7 @@ import { client } from "@/sanity/lib/client";
 import { Card } from "./ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 import { BorderBeam } from "./magicui/border-beam";
+import Image from "next/image";
 
 export type Certification = {
   name: string;
@@ -71,9 +72,9 @@ export default async function Certifications() {
                   </DialogTrigger>
                   <DialogContent className="p-0 max-w-[800px] w-full overflow-hidden">
                     <div className="aspect-[4/3] relative">
-                      <img
+                      <Image
                         src={c.thumbnail}
-                        alt="Certification 1"
+                        alt={`Certification ${index}`}
                         width={800}
                         height={600}
                         className="object-cover w-full h-full"
