@@ -33,6 +33,29 @@ export default async function Page({
     return data[projectIndex + 1].slug;
   }
 
+  function getNextProjectThumbnail(slug: string) {
+    const projectIndex = data.findIndex((p) => p.slug === slug);
+    if (projectIndex === -1 || projectIndex === data.length - 1) {
+      return data[0]?.thumbnail || "";
+    }
+    return data[projectIndex + 1].thumbnail;
+  }
+
+  function getNextProjectTags(slug: string) {
+    const projectIndex = data.findIndex((p) => p.slug === slug);
+    if (projectIndex === -1 || projectIndex === data.length - 1) {
+      return data[0]?.tags || "";
+    }
+    return data[projectIndex + 1].tags;
+  }
+  function getNextProjectName(slug: string) {
+    const projectIndex = data.findIndex((p) => p.slug === slug);
+    if (projectIndex === -1 || projectIndex === data.length - 1) {
+      return data[0]?.name || "";
+    }
+    return data[projectIndex + 1].name;
+  }
+
   if (!project) {
     return (
       <div className="container mx-auto px-4 py-8 flex items-center justify-center min-h-screen">
@@ -75,21 +98,8 @@ export default async function Page({
                 ))}
             </div>
           </div>
-          <div className="p-2">
-            {/* {dev && <Button onClick={response}></Button>} */}
-            <Button variant={"ghost"}>
-              <Link
-                href={`/projects/${getNextProjectSlug(project.slug)}`}
-                className="flex items-center justify-center gap-2"
-              >
-                Next Project <ArrowRight />
-              </Link>
-            </Button>
-          </div>
         </div>
-        {/* /* -------------------------------------------------------------------------- */
-        /*                                 Description                                */
-        /* -------------------------------------------------------------------------- */}
+
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="relative">
             <div className="absolute inset-0 z-[-1]">
@@ -115,9 +125,7 @@ export default async function Page({
               </Link>
             </Button>
           </div>
-          {/* /* -------------------------------------------------------------------------- */
-          /*                                  Slideshow                                 */
-          /* -------------------------------------------------------------------------- */}
+
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-green-500 rounded-lg opacity-50 blur-3xl" />
             <div className="relative bg-white/80 backdrop-blur-sm rounded-lg border shadow-2xl">
@@ -135,9 +143,7 @@ export default async function Page({
             </div>
           </div>
         </div>
-        {/* /* -------------------------------------------------------------------------- */
-        /*                               Project Details                              */
-        /* -------------------------------------------------------------------------- */}
+
         <div className="mx-auto max-w-3xl">
           <h1 className="text-3xl font-bold mb-8 text-center">
             Project Details
@@ -163,30 +169,65 @@ export default async function Page({
             </dl>
             <div className="mt-6">
               <h3 className="text-lg font-semibold mb-4">Application Stack</h3>
-              <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
+                <div className="flex flex-wrap items-center justify-start gap-4">
                 {project.icons &&
                   project.icons.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col items-center justify-center gap-2 rounded-lg p-2 bg-white"
-                    >
-                      <Image
-                        src={icon || "/placeholder.svg"}
-                        alt={`icon ${index + 1}`}
-                        width={40}
-                        height={40}
-                        className="rounded"
-                      />
-                    </div>
+                  <div
+                    key={index}
+                    className="flex items-center justify-center rounded-2xl bg-white shadow-md aspect-square w-24 h-24"
+                  >
+                    <Image
+                      src={icon || "/placeholder.svg"}
+                      alt={`icon ${index + 1}`}
+                      width={40}
+                      height={40}
+                      className="rounded"
+                    />
+                  </div>
                   ))}
-              </div>
+                </div>
             </div>
           </Card>
         </div>
-        {/* <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl">
           <h1 className="text-3xl font-bold mb-8 text-center">Next Project</h1>
-          <Card className="p-6 bg-secondary"></Card>
-        </div> */}
+          <Link href={`/projects/${getNextProjectSlug(project.slug)}`}>
+            <Card className="p-6 bg-secondary flex items-center justify-center gradient transition-transform duration-300 ease-in-out hover:scale-105 border-inherit">
+              <div className="flex flex-col gap-2">
+                <h2 className="tracking-tighter text-white">
+                  {getNextProjectName(project.slug)}
+                </h2>
+                <div className="flex flex-wrap gap-2">
+                  {getNextProjectTags(project.slug).map((tag, index) => (
+                    <Badge key={index} variant={"default"}>
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+              <div className="relative">
+                <div className="relative bg-white/80 backdrop-blur-sm rounded-lg border shadow-2xl">
+                  <div className="flex items-center gap-2 border-b p-2">
+                    <div className="flex gap-1.5">
+                      <div className="h-3 w-3 rounded-full bg-red-500" />
+                      <div className="h-3 w-3 rounded-full bg-yellow-500" />
+                      <div className="h-3 w-3 rounded-full bg-green-500" />
+                    </div>
+                  </div>
+                  <div className="relative w-full aspect-video">
+                    <Image
+                      alt="Image"
+                      className="object-contain aspect-video"
+                      height={400}
+                      src={getNextProjectThumbnail(project.slug)}
+                      width={400}
+                    />
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </Link>
+        </div>
       </div>
     </div>
   );

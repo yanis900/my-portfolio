@@ -9,6 +9,14 @@ import Featured from "./Featured";
 import { Badge } from "./ui/badge";
 
 export default function About() {
+  console.log(`
+       ██     ██ ███████ ██      ███████  ██████  ███    ███ ███████
+       ██     ██ ██      ██      ██      ██    ██ ████  ████ ██    
+       ██  █  ██ █████   ██      ██      ██    ██ ██ ████ ██ █████   
+       ██ ███ ██ ██      ██      ██      ██    ██ ██  ██  ██ ██    
+        ███ ███  ███████ ███████ ███████  ██████  ██      ██ ███████ 
+                           to My Portfolio!
+      `);
   return (
     <div id="about" className="mesh">
       <BackgroundLines className="relative w-screen h-screen z-10">
@@ -27,7 +35,7 @@ export default function About() {
               <p className="text-muted-foreground text-center p-2 space-y-3">
                 Hi 👋 I am Yanis, a Full-Stack Developer based in London, United
                 Kingdom 📍. <br />
-                <Badge variant={'secondary'}>NextJS | ReactJS | Typescript</Badge>
+                <Badge variant={'secondary'}>NextJs | ReactJs | MongoDB | ExpressJs </Badge>
               </p>
             </BoxReveal>
             <BoxReveal duration={0.5}>
