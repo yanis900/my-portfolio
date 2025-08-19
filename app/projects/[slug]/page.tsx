@@ -4,7 +4,14 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Clock,
+  ExternalLink,
+  Github,
+  Mail,
+} from "lucide-react";
 import Link from "next/link";
 import { SlideShow } from "@/components/SlideShow";
 import FullScreenSlideShow from "@/components/FullScreenSlideShow";
@@ -88,7 +95,7 @@ export default async function Page({
           <div>
             <span className="text-muted-foreground">{project.date}</span>
             <h1 className="text-3xl font-bold mt-2">{project.name}</h1>
-            {/* <p className="text-xl text-muted-foreground mt-1">Open Source</p> */}
+            {/* <p className="text-xl text-muted-foreground mt-1 right-0">Open Source</p> */}
             <div className="flex flex-wrap gap-2 mt-3">
               {project.tags &&
                 project.tags.map((tag, index) => (
@@ -97,6 +104,68 @@ export default async function Page({
                   </Badge>
                 ))}
             </div>
+          </div>
+          <div className="flex items-center gap-3">
+            {project.repo ? (
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex items-center gap-2 hover:bg-accent transition-colors bg-transparent"
+                asChild
+              >
+                <Link
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View GitHub repository"
+                >
+                  <Github className="h-4 w-4" />
+                  GitHub
+                </Link>
+              </Button>
+            ) : (
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex items-center gap-2 hover:bg-accent transition-colors bg-transparent"
+                asChild
+              >
+                <a
+                  href="mailto:yanis8y@hotmail.com"
+                  aria-label="Contact me about this project"
+                >
+                  <Mail className="h-4 w-4" />
+                  Contact Me
+                </a>
+              </Button>
+            )}
+
+            {project.src ? (
+              <Button
+                className="flex items-center gap-2 bg-primary hover:bg-primary/90 transition-colors"
+                size="sm"
+                asChild
+              >
+                <Link
+                  href={project.src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View live website"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  View my website here
+                </Link>
+              </Button>
+            ) : (
+              <Button
+                className="flex items-center gap-2 bg-muted hover:bg-muted/80 transition-colors text-muted-foreground cursor-default"
+                size="sm"
+                disabled
+              >
+                <Clock className="h-4 w-4" />
+                Coming Soon
+              </Button>
+            )}
           </div>
         </div>
 
@@ -169,23 +238,23 @@ export default async function Page({
             </dl>
             <div className="mt-6">
               <h3 className="text-lg font-semibold mb-4">Application Stack</h3>
-                <div className="flex flex-wrap items-center justify-start gap-4">
+              <div className="flex flex-wrap items-center justify-start gap-4">
                 {project.icons &&
                   project.icons.map((icon, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-center rounded-2xl bg-white shadow-md aspect-square w-24 h-24"
-                  >
-                    <Image
-                      src={icon || "/placeholder.svg"}
-                      alt={`icon ${index + 1}`}
-                      width={40}
-                      height={40}
-                      className="rounded"
-                    />
-                  </div>
+                    <div
+                      key={index}
+                      className="flex items-center justify-center rounded-2xl bg-white shadow-md aspect-square w-24 h-24"
+                    >
+                      <Image
+                        src={icon || "/placeholder.svg"}
+                        alt={`icon ${index + 1}`}
+                        width={40}
+                        height={40}
+                        className="rounded"
+                      />
+                    </div>
                   ))}
-                </div>
+              </div>
             </div>
           </Card>
         </div>

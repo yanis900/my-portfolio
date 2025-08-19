@@ -42,6 +42,11 @@ const projects: SchemaTypeDefinition = {
       title: "Src",
     },
     {
+      name: "repo",
+      type: "url",
+      title: "Repo",
+    },
+    {
       name: "slug",
       type: "slug",
       title: "Slug",

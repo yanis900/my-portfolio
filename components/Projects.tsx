@@ -2,9 +2,6 @@ import React from "react";
 import BoxReveal from "./magicui/box-reveal";
 import { PinContainer } from "./acerternityui/3d-pin";
 import { client } from "@/sanity/lib/client";
-import DotPattern from "./magicui/dot-pattern";
-import Image from "next/image";
-import { Card } from "./ui/card";
 
 export type Project = {
   name: string;
@@ -14,6 +11,7 @@ export type Project = {
   tags: string[];
   thumbnail: string;
   src: string;
+  repo: string;
   slug: string;
   images: string[];
   role: string;
@@ -33,6 +31,7 @@ export const fetchProjects = async (): Promise<Projects> => {
   "tags": tags[],
   "thumbnail": thumbnail.asset->url,
   src,
+  repo,
   "slug": slug.current,
   "images": images[].asset->url,
   role,
