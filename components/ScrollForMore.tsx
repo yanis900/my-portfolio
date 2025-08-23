@@ -33,7 +33,7 @@ return (
             border: "1px solid rgba(255, 255, 255, 0.125)",
         }}>
             Scroll for next project
-            <Image src="/icons/MouseScrollDown.gif" alt="" width={40} height={40} />
+            <Image src="/icons/MouseScrollDown.gif" alt="" unoptimized width={40} height={40} />
         </Badge>
         <svg
             className="w-6 h-6 mt-2 text-black drop-shadow-lg"
