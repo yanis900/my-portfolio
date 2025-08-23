@@ -45,8 +45,7 @@ export const fetchProjects = async (): Promise<Projects> => {
 export default async function Projects() {
   const projects = await fetchProjects();
   return (
-    <div id="projects" className="py-20 space-y-16 relative">
-
+    <div id="projects" className="py-20 relative">
       <div className="w-full grid place-items-center code">
         <BoxReveal duration={0.5}>
           <h1>
@@ -60,8 +59,17 @@ export default async function Projects() {
           </h1>
         </BoxReveal>
       </div>
-
-      <div className="mx-auto max-w-6xl flex flex-wrap justify-center items-center gap-x-[16rem] gap-y-[8rem]">
+      <div className="flex justify-center mt-12">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold text-gray-700">
+        Featured Projects
+          </h2>
+          <p className="mt-2 text-gray-500 text-base tracking-wide">
+        Explore a curated selection of my most impactful and innovative projects, highlighting my passion for development and problem-solving.
+          </p>
+        </div>
+      </div>
+      <div className="mx-auto max-w-6xl flex flex-wrap justify-center items-center gap-x-[16rem] gap-y-[8rem] mt-16">
         {projects.map((project, index) => (
           <PinContainer
             title={"View"}
@@ -82,9 +90,9 @@ export default async function Projects() {
               </h2>
             </BoxReveal>
             <BoxReveal duration={0.5}>
-              <h3>{project.description}</h3>
+              <h3 className="mt-2">{project.description}</h3>
             </BoxReveal>
-            <div className="flex items-center justify-between py-2">
+            <div className="flex items-center justify-between py-2 mt-2">
               <div className="flex items-center">
                 {project.icons &&
                   project.icons.map((icon, index) => (

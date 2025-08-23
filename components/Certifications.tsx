@@ -33,7 +33,6 @@ export default async function Certifications() {
   const certifications = await fetchCertifications();
   return (
     <main id="certifications" className="py-20 inverted-mesh relative">
-      
       <div className="w-full grid place-items-center">
         <BoxReveal duration={0.5}>
           <h1>
@@ -47,54 +46,65 @@ export default async function Certifications() {
           </h1>
         </BoxReveal>
       </div>
-
-      <div className="mx-auto max-w-4xl space-y-8 px-4 py-12">
-        <div className="grid gap-6">
-          {certifications.map((c, index) => (
-            <Card
+      <div className="flex justify-center mt-12">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold text-gray-700">Certifications</h2>
+          <p className="mt-2 text-gray-500 text-base tracking-wide">
+            A selection of certifications I have completed, showcasing my skills
+            and achievements.
+          </p>
+        </div>
+      </div>
+      <div className="mx-auto max-w-4xl space-y-8 px-4 py-12 grid gap-6">
+        {certifications.map((c, index) => (
+          <Card
             className="group relative overflow-hidden transition-all hover:shadow-lg"
             key={index}
-            >
-              <BorderBeam colorFrom="#0f172a" colorTo="#475569"/>
-              <div className="flex items-center gap-6 p-6">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="relative aspect-square w-24 shrink-0 bg-gray-100 cursor-pointer border rounded-lg">
-                      <img
-                        src={c.thumbnail}
-                        alt=""
-                        className="size-full object-cover rounded-lg"
-                      />
-                      <div className="absolute inset-0 grid place-items-center bg-black/5 opacity-0 transition-opacity group-hover:opacity-100 rounded-lg">
-                        <ZoomInIcon className="size-6 text-white drop-shadow" />
-                      </div>
+          >
+            <BorderBeam colorFrom="#0f172a" colorTo="#475569" />
+            <div className="flex items-center gap-6 p-6">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="relative aspect-square w-20 shrink-0 bg-gray-100 cursor-pointer border rounded-lg group">
+                    <Image
+                      src={c.thumbnail}
+                      alt=""
+                      width={80}
+                      height={80}
+                      className="size-full object-cover rounded-lg"
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none px-2 py-2">
+                      <span className="text-xs text-white/90 bg-black/80 px-3 py-3 rounded shadow transition-all duration-300 group-hover:opacity-100 opacity-90 mt-1 flex items-center justify-center">
+                        <ZoomInIcon className="inline w-5 h-5 transform transition-transform duration-300 group-hover:scale-125" />
+                      </span>
                     </div>
-                  </DialogTrigger>
-                  <DialogContent className="p-0 max-w-[800px] w-full overflow-hidden">
-                    <div className="aspect-[4/3] relative">
-                      <Image
-                        src={c.thumbnail}
-                        alt={`Certification ${index}`}
-                        width={800}
-                        height={600}
-                        className="object-cover w-full h-full"
-                        style={{ aspectRatio: "800/600", objectFit: "cover" }}
-                      />
-                    </div>
-                  </DialogContent>
-                </Dialog>
-                <div className="space-y-2">
-                  <h2 className="text-2xl font-semibold tracking-tight">
-                    {c.name}
-                  </h2>
-                  <p className="text-lg text-muted-foreground">
-                    Issued by {c.company}
-                  </p>
-                </div>
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="p-0 max-w-[800px] w-full overflow-hidden">
+                  <div className="aspect-[4/3] relative">
+                    <Image
+                      src={c.thumbnail}
+                      alt={`Certification ${index}`}
+                      width={800}
+                      height={600}
+                      className="object-cover w-full h-full"
+                      style={{ aspectRatio: "800/600", objectFit: "cover" }}
+                    />
+                  </div>
+                </DialogContent>
+              </Dialog>
+              <div className="space-y-2">
+                <h2 className="text-2xl font-semibold tracking-tight">
+                  {c.name}
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Issued by {c.company}
+                </p>
               </div>
-            </Card>
-          ))}
-        </div>
+            </div>
+          </Card>
+        ))}
       </div>
     </main>
   );

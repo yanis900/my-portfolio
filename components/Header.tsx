@@ -3,6 +3,9 @@ import React from "react";
 import { FloatingNav } from "./magicui/floating-nav";
 import ScrollBar from "./ScrollBar";
 import {
+  ArrowRight,
+  Github,
+  Linkedin,
   Newspaper,
   PanelsTopLeft,
   Settings,
@@ -11,6 +14,7 @@ import {
   Terminal,
 } from "lucide-react";
 import Link from "next/link";
+import { Arrow } from "@radix-ui/react-hover-card";
 
 export type NavItems = {
   name: string;
@@ -39,6 +43,16 @@ const navItems: NavItems[] = [
     link: "#certifications",
     icon: <Newspaper className="sm:w-4 sm:h-4 w-6 h-6" />,
   },
+  {
+    name: "",
+    link: "#certifications",
+    icon: <Linkedin className="sm:w-4 sm:h-4 w-6 h-6" />,
+  },
+  {
+    name: "",
+    link: "#certifications",
+    icon: <Github className="sm:w-4 sm:h-4 w-6 h-6" />,
+  },
 ];
 
 export default function Header() {
@@ -49,8 +63,18 @@ export default function Header() {
         <Terminal />
       </ul>
       <FloatingNav navItems={navItems} />
-      <Link href={'https://api.yanait.com/'} className="z-[1000]">
-        <Share2 />
+      <Link
+        href="https://api.yanait.com/"
+        className="z-[1000] flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r gradient text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-200"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span className="whitespace-nowrap flex items-center">
+          🚀
+          <hr className="mx-2 h-4 w-px shrink-0 bg-white inline-block"/>
+          Check out my API library
+        </span>
+        <ArrowRight className="w-5 h-5" />
       </Link>
     </div>
   );
