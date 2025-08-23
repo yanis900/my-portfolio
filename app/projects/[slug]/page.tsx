@@ -11,10 +11,13 @@ import {
   ExternalLink,
   Github,
   Mail,
+  Zap,
 } from "lucide-react";
 import Link from "next/link";
 import { SlideShow } from "@/components/SlideShow";
 import FullScreenSlideShow from "@/components/FullScreenSlideShow";
+import ScrollForMore from "@/components/ScrollForMore";
+
 
 export default async function Page({
   params,
@@ -90,6 +93,7 @@ export default async function Page({
 
   return (
     <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <ScrollForMore />
       <div className="space-y-8">
         <div className="flex justify-between">
           <div>
@@ -180,9 +184,7 @@ export default async function Page({
               />
             </div>
             <p className="text-muted-foreground">
-              {project.content
-                ? project.content
-                : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsam maxime magnam facere numquam cupiditate unde architecto magni excepturi temporibus vitae aspernatur, natus enim, deleniti, labore dolorum est voluptate ratione!"}
+              {project.content ? project.content : ""}
             </p>
             <Button variant={"ghost"} className="mt-4">
               <Link
@@ -193,6 +195,86 @@ export default async function Page({
                 Back
               </Link>
             </Button>
+            {project.repos && project.repos.length > 0 && (
+              <div className="flex flex-col gap-6 mt-6">
+                {project.repos.map((repo, idx) => (
+                  <Card
+                    key={idx}
+                    className="group hover:shadow-lg transition-all duration-200 border-0 shadow-md"
+                  >
+                    <CardHeader className="pb-4">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-xl group-hover:text-primary transition-colors m-0">
+                          {repo.name}
+                        </CardTitle>
+                        <Badge
+                          variant={"outline"}
+                          className="text-xs flex items-center"
+                        >
+                          <div className="w-2 h-2 rounded-full mr-1.5 bg-green-500"></div>
+                          active
+                        </Badge>
+                      </div>
+                      {repo.description && (
+                        <div className="text-sm leading-relaxed text-muted-foreground mt-2">
+                          {repo.description}
+                        </div>
+                      )}
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="flex flex-col gap-3">
+                        {/* API Endpoint */}
+                        {repo.api && (
+                          <div className="flex items-center gap-2 p-3 bg-muted/50 rounded-lg">
+                            <Badge
+                              variant="outline"
+                              className="text-xs font-mono"
+                            >
+                              {repo.method || "GET"}
+                            </Badge>
+                            <code className="text-xs text-muted-foreground font-mono flex-1 truncate">
+                              {repo.api}
+                            </code>
+                          </div>
+                        )}
+                        {/* Action Buttons */}
+                        <div className="flex gap-2">
+                          {repo.repo && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="flex-1 bg-transparent"
+                              asChild
+                            >
+                              <a
+                                href={repo.repo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <Github className="h-4 w-4 mr-2" />
+                                GitHub
+                              </a>
+                            </Button>
+                          )}
+                          {repo.api && (
+                            <Button size="sm" className="flex-1" asChild>
+                              <a
+                                href={repo.api}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <Zap className="h-4 w-4 mr-2" />
+                                API
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="relative">

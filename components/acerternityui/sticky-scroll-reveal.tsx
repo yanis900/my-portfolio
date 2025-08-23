@@ -16,6 +16,7 @@ import {
 } from "../ui/dialog";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
+import Image from "next/image";
 
 export const StickyScroll = ({
   content,
@@ -97,10 +98,12 @@ export const StickyScroll = ({
             )}
           >
             <p className="tracking-tighter font-normal absolute top-0 right-0 text-gray-500 rounded-bl-lg bg-white p-1 border-l border-b"><span>zoom in</span> ⌞ ⌝</p>
-            <img
+            <Image
               src={content[activeCard].src ?? null}
               alt={content[activeCard].title}
               className="object-contain max-w-full h-auto"
+              width={640}
+              height={480}
             />
           </Button>
         </DialogTrigger>
@@ -109,10 +112,12 @@ export const StickyScroll = ({
             {content[activeCard].title}
           </h2>
           <div className="flex items-center justify-center">
-            <img
-              src={content[activeCard].src ?? null}
+            <Image
+              src={content[activeCard].src ?? ''}
               alt={content[activeCard].title}
               className="object-contain max-w-full h-auto border"
+              width={640}
+              height={480}
             />
           </div>
         </DialogContent>

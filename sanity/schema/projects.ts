@@ -26,6 +26,48 @@ const projects: SchemaTypeDefinition = {
       title: "Content",
     },
     {
+      name: "repos",
+      type: "array",
+      title: "Repos",
+      of: [
+        {
+          type: "object",
+          name: "repoItem",
+          title: "Repository",
+          fields: [
+            {
+              name: "name",
+              type: "string",
+              title: "Name",
+            },
+            {
+              name: "description",
+              type: "string",
+              title: "Description",
+            },
+            {
+              name: "method",
+              type: "string",
+              title: "Method",
+              options: {
+                list: ["GET", "POST"],
+              },
+            },
+            {
+              name: "repo",
+              type: "url",
+              title: "Repo",
+            },
+            {
+              name: "api",
+              type: "url",
+              title: "API",
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: "tags",
       type: "array",
       title: "Tags",

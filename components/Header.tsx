@@ -8,13 +8,10 @@ import {
   Linkedin,
   Newspaper,
   PanelsTopLeft,
-  Settings,
-  Share2,
   SquareUser,
   Terminal,
 } from "lucide-react";
 import Link from "next/link";
-import { Arrow } from "@radix-ui/react-hover-card";
 
 export type NavItems = {
   name: string;

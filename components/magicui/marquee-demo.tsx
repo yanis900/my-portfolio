@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "./marquee";
 
+import Image from "next/image";
+
 const stack = [
   {
     name: "nextJs",
@@ -45,7 +47,7 @@ const StackCard = ({ img, name }: { img: string; name: string }) => {
       )}
     >
       <div className="flex gap-2 items-center justify-center">
-        <img src={img} alt="" width={25} height={25} />
+  <Image src={img} alt={name} width={25} height={25} />
         <figcaption className="text-sm font-medium">{name}</figcaption>
       </div>
     </figure>

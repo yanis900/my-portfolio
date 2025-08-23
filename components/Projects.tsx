@@ -2,6 +2,7 @@ import React from "react";
 import BoxReveal from "./magicui/box-reveal";
 import { PinContainer } from "./acerternityui/3d-pin";
 import { client } from "@/sanity/lib/client";
+import Image from "next/image";
 
 export type Project = {
   name: string;
@@ -18,26 +19,29 @@ export type Project = {
   who: string;
   type: string;
   icons: string[];
+  repos: { name: string; description: string; repo: string; api: string; method: string }[];
 };
 
 export type Projects = Project[];
 
 export const fetchProjects = async (): Promise<Projects> => {
   const data = await client.fetch<Projects>(`*[_type == "projects"][0...5]{
-  name,
-  date,
-  description,
-  content,
-  "tags": tags[],
-  "thumbnail": thumbnail.asset->url,
-  src,
-  repo,
-  "slug": slug.current,
-  "images": images[].asset->url,
-  role,
-  who,
-  type,
-  "icons": icons[].asset->url,
+    name,
+    date,
+    description,
+    content,
+    "tags": tags[],
+    "thumbnail": thumbnail.asset->url,
+    src,
+    repo,
+    "slug": slug.current,
+    "images": images[].asset->url,
+    role,
+    who,
+    type,
+    "icons": icons[].asset->url,
+    "repos": repos[]{name, description, repo, api, method},
+
   }`);
   return data;
 };
@@ -78,10 +82,13 @@ export default async function Projects() {
           >
             <div className="relative flex items-center justify-center sm:w-[32rem] w-[80vw] overflow-hidden h-[20vh] lg:h-[25vh]">
               <div className="relative w-full h-full overflow-hidden rounded-3xl bg"></div>
-              <img
+              <Image
                 src={project.thumbnail}
                 alt="cover"
                 className="z-10 absolute -bottom-4 w-5/6 rounded-lg rotate-2"
+                width={800}
+                height={450}
+                priority
               />
             </div>
             <BoxReveal duration={0.5}>
@@ -103,10 +110,12 @@ export default async function Projects() {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img
+                      <Image
                         src={icon}
                         alt="icon5"
                         className="p-1.5 rounded-lg"
+                        width={40}
+                        height={40}
                       />
                     </div>
                   ))}
