@@ -19,18 +19,20 @@ import FullScreenSlideShow from "@/components/FullScreenSlideShow";
 import ScrollForMore from "@/components/ScrollForMore";
 
 
+
 export default async function Page({
   params,
+  searchParams
 }: {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
+  const { slug } = await params;
   let data: Projects;
   let project: Project | undefined;
   try {
     data = await fetchProjects();
-    project = data.find((project) => project.slug === params.slug);
+    project = data.find((project) => project.slug === slug);
   } catch (error) {
     console.error(error);
   }
