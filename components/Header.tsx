@@ -41,6 +41,11 @@ const navItems: NavItems[] = [
     icon: <Newspaper className="sm:w-4 sm:h-4 w-6 h-6" />,
   },
   {
+    name: "Blog",
+    link: "#blog",
+    icon: <Terminal className="sm:w-4 sm:h-4 w-6 h-6" />, // Changed to Terminal for blog
+  },
+  {
     name: "",
     link: "#certifications",
     icon: <Linkedin className="sm:w-4 sm:h-4 w-6 h-6" />,

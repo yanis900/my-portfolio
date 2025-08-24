@@ -5,7 +5,7 @@ import React from "react";
 export default function Featured() {
   return (
     <Link
-      href={"https://api.yanait.com/"}
+      href={"https://www.npmjs.com/package/pleasereadme"}
       className="flex items-center justify-center border rounded-full py-1 px-2 cursor-pointer z-10"
     >
       ✨ <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
