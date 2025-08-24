@@ -33,7 +33,7 @@ export default function About() {
               </h1>
             </BoxReveal>
             <BoxReveal duration={0.5}>
-              <p className="text-muted-foreground text-center p-2 space-y-3">
+              <div className="text-muted-foreground text-center p-2 space-y-3">
                 Hi 👋 I am Yanis, a Full-Stack Developer based in London, United
                 Kingdom 📍. <br />
                 <div className="flex justify-center">
@@ -88,7 +88,7 @@ export default function About() {
                     />
                   </Badge>
                 </div>
-              </p>
+              </div>
             </BoxReveal>
             <BoxReveal duration={0.5}>
               <div className="flex gap-2">
