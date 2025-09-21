@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin } from "lucide-react";
+import { Check, Copy, Github, Linkedin, Mail } from "lucide-react";
 import BoxReveal from "./magicui/box-reveal";
 import { Button } from "./ui/button";
 import { LinkPreview } from "./acerternityui/link-preview";
@@ -8,16 +8,24 @@ import { BackgroundLines } from "./acerternityui/background-line";
 import Featured from "./Featured";
 import { Badge } from "./ui/badge";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function About() {
-  // console.log(`
-  //      ██     ██ ███████ ██      ███████  ██████  ███    ███ ███████
-  //      ██     ██ ██      ██      ██      ██    ██ ████  ████ ██
-  //      ██  █  ██ █████   ██      ██      ██    ██ ██ ████ ██ █████
-  //      ██ ███ ██ ██      ██      ██      ██    ██ ██  ██  ██ ██
-  //       ███ ███  ███████ ███████ ███████  ██████  ██      ██ ███████
-  //                          to My Portfolio!
-  //     `);
+  const [isCopied, setIsCopied] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const email = "yanis991@hotmail.com";
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email).then(() => {
+      setIsCopied(true);
+      setTimeout(() => {
+        setIsCopied(false);
+        setIsHovered(false);
+      }, 2000);
+    });
+  };
+
   return (
     <div id="about" className="mesh">
       <BackgroundLines className="relative w-screen h-screen z-10">
@@ -74,8 +82,7 @@ export default function About() {
                           "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)",
                       }}
                     />
-                              <hr className="mx-2 h-4 w-px shrink-0 bg-black inline-block"/>
-
+                    <hr className="mx-2 h-4 w-px shrink-0 bg-black inline-block" />
                     <Image
                       src="icons/nextjs.svg"
                       alt="Next.js"
@@ -101,6 +108,15 @@ export default function About() {
                   <LinkPreview url="https://github.com/yanis900">
                     <Github />
                   </LinkPreview>
+                </Button>
+                <Button
+                  size={"icon"}
+                  variant={"ghost"}
+                  onClick={handleCopyEmail}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  {isCopied ? <Check color="green" className="w-4 h-4"/> : isHovered ? <Copy className="w-4 h-4"/> : <Mail />}
                 </Button>
               </div>
             </BoxReveal>

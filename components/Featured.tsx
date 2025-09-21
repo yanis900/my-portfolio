@@ -9,7 +9,7 @@ export default function Featured() {
       className="flex items-center justify-center border rounded-full py-1 px-2 cursor-pointer z-10"
     >
       ✨ <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
-      <p className=" text-xs font-medium">
+      <p className="text-xs font-medium">
         <span className="font-semibold">Featured: </span>
         &quot;pleasereadme&quot; README AI npm package{" "}
       </p>

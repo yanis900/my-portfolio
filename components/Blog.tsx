@@ -27,7 +27,7 @@ export default function Blog() {
   const [hoveredPost, setHoveredPost] = useState<string | null>(null);
 
   return (
-    <div id='blog' className="py-20 space-y-16 mesh relative">ß
+    <div id='blog' className="py-20 space-y-16 mesh relative">
       <div className="w-full grid place-items-center">
         <BoxReveal duration={0.5}>
           <h1>

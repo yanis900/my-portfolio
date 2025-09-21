@@ -3,7 +3,7 @@ import React from "react";
 import { FloatingNav } from "./magicui/floating-nav";
 import ScrollBar from "./ScrollBar";
 import {
-  ArrowRight,
+  ChevronRight,
   Github,
   Linkedin,
   Newspaper,
@@ -67,16 +67,16 @@ export default function Header() {
       <FloatingNav navItems={navItems} />
       <Link
         href="https://api.yanait.com/"
-        className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r gradient text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-200"
+        className="flex items-center gap-2 px-2 py-1 rounded-full bg-gradient-to-r gradient text-white shadow-lg hover:scale-105 transition-transform duration-200"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span className="whitespace-nowrap flex items-center">
+        <p className="whitespace-nowrap flex items-center text-sm">
           🚀
-          <hr className="mx-2 h-4 w-px shrink-0 bg-white inline-block"/>
+          <hr className="mx-2 h-4 w-px shrink-0 bg-white inline-block" />
           Check out my API library
-        </span>
-        <ArrowRight className="w-5 h-5" />
+        </p>
+      <ChevronRight className="ml-1 size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
       </Link>
     </div>
   );
